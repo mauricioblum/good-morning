@@ -55,10 +55,154 @@
       "flag": "🇵🇭"
     },
     {
+      "id": "aleut-1",
+      "phrase": "Qilachxizax̂",
+      "description": "Aleut or Unangam Tunuu is a member of the Eskimo-Aleut language family, spoken by the Aleut people living on the Alaskan Peninsula, and on the Commander, Aleutian, and Pribilof Islands. It is the only language in the Aleut branch of the Eskimo–Aleut language family.",
+      "flag": "🇦🇽"
+    },
+    {
+      "id": "als-1",
+      "phrase": "Güete Morge",
+      "description": "Alsatian is a West Germanic language spoken by around 900,000 people, mainly in the Alsace region of northeastern France.",
+      "flag": "🇫🇷"
+    },
+    {
+      "id": "alt-1",
+      "phrase": "Јакшылыкту таҥла (Ĵakšılıktu tañla)",
+      "description": "Altai is a language belonging to the Turkic language family and is officially spoken in the Altai Republic of Russia.",
+      "flag": "🇷🇺"
+    },
+    {
+      "id": "arag-1",
+      "phrase": "Buen diya",
+      "description": "Aragonese is a language in the Romance language family that is native to Spain and spoken by just over 10, 000 people in the Pyrenees valley of Aragon.",
+      "flag": "🇪🇸"
+    },
+    {
       "id": "aus-1",
       "phrase": "G’day",
       "description": "Australia has no official language, however Australian English is the variety of English spoken here.",
       "flag": "🇦🇺"
+    },
+    {
+      "id": "aramaic-1",
+      "phrase": "Safro bricho | Yasetel liesbukh",
+      "description": "Aramaic ארמית is a member of the Semitic branch of the Afro-Asiatic language family that originated among the Arameans in the ancient region of Syria. It has a 3,000-year history and is still spoken by small groups of people in different parts of the Middle East.",
+      "flag": "🇸🇾"
+    },
+    {
+      "id": "assyrian-1",
+      "phrase": "Kedamtookh brikhta",
+      "description": "Assyrian, also known as Syrian or neo Aramaic is the East Semitic dialect that evolved from ancient Akkadian after 1950 B.C. As a Semitic language, it originated from the middle eastern region and is related to Arabic and Hebrew.",
+      "flag": "🇸🇾"
+    },
+    {
+      "id": "asturian-1",
+      "phrase": "Bonos dies",
+      "description": "Asturian is a West Iberian Romance language spoken by around 400,000 people in Asturias, Spain.",
+      "flag": "🇪🇸"
+    },
+    {
+      "id": "bali-1",
+      "phrase": "Rahajeng semeng",
+      "description": "Balinese belongs to the Malayo-Polynesian language family and is spoken by around 3.3 million people on the Indonesian island of Bali as well as the regions of Nusa Penida, Lombok, Java, Sumatra, and Sulawesi.",
+      "flag": "🇮🇩"
+    },
+    {
+      "id": "bas-1",
+      "phrase": "Egun on",
+      "description": "Basque (euskara) is a language spoken in the Basque Country (Gipuzkoa, Araba, Bizkaia) and Navarra (in Spain) as well as in the French Basque Country (Labourd, Soule and Basse-Navarre). Linguistically, Basque is a language isolate and is unrelated to the other languages of Europe.",
+      "flag": "🇪🇸"
+    },
+    {
+      "id": "bashkir-1",
+      "phrase": "хәйерле ирте (xäyyerlye irtye)",
+      "description": "Bashkir is an endangered language belonging to the Kipchak branch of the Turkic languages. Closely related to the Tatar and Kazakh languages, it is spoken by around 1.4 million native speakers in Russia, as well as in Ukraine, Kazakhstan, Belarus, Uzbekistan, and other neighboring post-Soviet regions.",
+      "flag": "🇷🇺"
+    },
+    {
+      "id": "bavar-1",
+      "phrase": "Guadn moing",
+      "description": "Bavarian is a regional dialect of German spoken in the German state of Bavaria, western Austria, and Northeastern Italy by over 14 million people. It uses German grammar, but takes several root words from Latin.",
+      "flag": "🇷🇺"
+    },
+    {
+      "id": "belarusian-1",
+      "phrase": "Добрай раніцы (Dobray ranici)",
+      "description": "Belarusian is the official language of Belarus. This East Slavic language is also spoken in Russia, Ukraine and Poland.",
+      "flag": "🇷🇺"
+    },
+    {
+      "id": "bengali-1",
+      "phrase": "সুপ্রভাত Nomoskar",
+      "description": "Bengali বাংলা is the only official language of Bangladesh, one of the 22 official languages of India, and the sixth most spoken language in the world. It is spoken as a first language by the majority of the population in Bangladesh, as well as people in the Indian state of West Bengal.",
+      "flag": "🇧🇩"
+    },
+    {
+      "id": "bhojpuri-1",
+      "phrase": "राम राम (raam raam)",
+      "description": "Bhojpuri is an Indo-Aryan language, considered to be one of the most rapidly growing languages in the world, spoken by over 40 million speakers in northern-eastern India and the Terai region of Nepal.",
+      "flag": "🇮🇳"
+    },
+    {
+      "id": "bislama-1",
+      "phrase": "Gudmoning",
+      "description": "Bislama is an English-based creole language and one of the official languages of the island of Vanuatu with around 10,000 native speakers.",
+      "flag": "🇻🇺"
+    },
+    {
+      "id": "bosnian-1",
+      "phrase": "Dobro jutro",
+      "description": "Bosnian, a south Slavic language of the Indo-European family, is the official language of Bosnia and is essentially the same language as Croatian and Serbian. All three languages used to be known as Serbo-Croatian before the break-up of Yugoslavia.",
+      "flag": "🇧🇦"
+    },
+    {
+      "id": "breton-1",
+      "phrase": "Demat",
+      "description": "Breton is a Southwestern Brittonic language of the Celtic language spoken in Brittany in the northwest of France.",
+      "flag": "🏳"
+    },
+    {
+      "id": "bulgarian-1",
+      "phrase": "Добро утро (Dobro utro)",
+      "description": "Bulgarian is a South Slavic language spoken in Southeastern Europe, primarily in Bulgaria. It is the country’s only official language and Bulgarian is written with Cyrillic.",
+      "flag": "🇧🇬"
+    },
+    {
+      "id": "burmese-",
+      "phrase": "Mingalarba မင်္ဂလာနံနက်ခင်းပါ",
+      "description": "Burmese is a Sino-Tibetan language spoken in Myanmar where it is an official language and the language of the Bamar people, the country’s principal ethnic group.",
+      "flag": "🇲🇲"
+    },
+    {
+      "id": "cambodian-1",
+      "phrase": "’ârŭn suŏ sdei អរុណ​សួស្តី",
+      "description": "Khmer is the language of the Khmer people and the official language of Cambodia. With over 16 million speakers, it is the second most widely spoken Austroasiatic language.",
+      "flag": "🇰🇭"
+    },
+    {
+      "id": "catalan-1",
+      "phrase": "Bon dia",
+      "description": "Catalan is a Western Romance language derived from Vulgar Latin and named after the medieval Principality of Catalonia, in northeastern of modern Spain. It is the only official language of Andorra, and a co-official language of the Spanish autonomous communities of Catalonia, the Balearic Islands and Valencia.",
+      "flag": "🇪🇸"
+    },
+    {
+      "id": "de-1",
+      "phrase": "Guten Morgen",
+      "description": "German Deutsch is the official language of both Germany and Austria and one of the three official languages of Switzerland. German belongs to the West Germanic group of the Indo-European language family. One of the major languages of the world, German is a native language to almost 100 million people worldwide and the most widely spoken native language in the European Union.",
+      "flag": "🇩🇪"
+    },
+    {
+      "id": "dutch-1",
+      "phrase": "Goedemorgen",
+      "description": "Dutch is a West Germanic language spoken by about 27 million people world-wide mostly in the Netherlands, northern Belgium, and Suriname.",
+      "flag": "🇳🇱"
+    },
+    {
+      "id": "portugal-1",
+      "phrase": "Bom dia",
+      "description": "Portuguese is the sole official language of Portugal, Angola, Mozambique, Guinea-Bissau, Cape Verde, São Tomé and Príncipe, and Brazil, while having co-official language status in East Timor, Equatorial Guinea, and Macau. A Portuguese-speaking person or nation is referred to as Lusophone (lusófono).",
+      "flag": "🇵🇹"
     }
   ]
 }
