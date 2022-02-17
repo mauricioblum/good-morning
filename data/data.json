@@ -187,6 +187,36 @@
       "flag": "🇪🇸"
     },
     {
+      "id": "chinese-mandarin-1",
+      "phrase": "nǐ zǎo 你早",
+      "description": "Mandarin Chinese is the official language of Mainland China and Taiwan, and is one of the official languages of Singapore. Mandarin is often placed first in lists of languages by number of native speakers with almost a billion speakers.",
+      "flag": "🇨🇳"
+    },
+    {
+      "id": "croatian-1",
+      "phrase": "Dobro jutro",
+      "description": "Croatian or Hrvatski is a South Slavic language spoken mainly in Croatia, Bosnia and Herzegovina, some parts of Serbia, and the neighbouring countries by about 5.5 million people.",
+      "flag": "🇭🇷"
+    },
+    {
+      "id": "czech-1",
+      "phrase": "dobrý den",
+      "description": "Czech is a Western Slavic language which is mutually intelligible with Slovak. It is mainly spoken in the Czech Republic with over 10,5 million speakers.",
+      "flag": "🇨🇿"
+    },
+    {
+      "id": "danish-1",
+      "phrase": "Godmorgen",
+      "description": "Danish is a Scandinavian language and the only official language of the Kingdom of Denmark. Closely related to Swedish and Norwegian, it is spoken in Denmark and in some parts of Greenland and northern Germany.",
+      "flag": "🇩🇰"
+    },
+    {
+      "id": "dhiveni-1",
+      "phrase": "Ba’ajjaveri hedhuneh",
+      "description": "Dhivehi or Maldivian is an Indo-Aryan language spoken on the islands of Maldives where it is an official language.",
+      "flag": "🇲🇻"
+    },
+    {
       "id": "de-1",
       "phrase": "Guten Morgen",
       "description": "German Deutsch is the official language of both Germany and Austria and one of the three official languages of Switzerland. German belongs to the West Germanic group of the Indo-European language family. One of the major languages of the world, German is a native language to almost 100 million people worldwide and the most widely spoken native language in the European Union.",
@@ -199,10 +229,502 @@
       "flag": "🇳🇱"
     },
     {
+      "id": "dzhongkao-1",
+      "phrase": "ངྲོ་པདེ་ལེགས། Dobro delek",
+      "description": "Dzonkha or Bhutanese is the sole official and national language of the Kingdom of Bhutan. This Sino-Tibetan language is spoken by over half a million people in Bhutan and is written with the Tibetan alphabet.",
+      "flag": "🇧🇹"
+    },
+    {
+      "id": "elfdalian-1",
+      "phrase": "Gumåron",
+      "description": "Elfdalian also called Övdalian is a North Germanic Indo-European language spoken by up to 3,000 people in the Älvdalen region of Sweden.",
+      "flag": "🇸🇪"
+    },
+    {
+      "id": "estonian-1",
+      "phrase": "tere hommikust",
+      "description": "Estonian is a Finno-Ugric language spoken as the official language in Estonia. It is closely related to Finnish.",
+      "flag": "🇪🇪"
+    },
+    {
+      "id": "faorese-1",
+      "phrase": "Góðan morgun",
+      "description": "Faroese is a North Germanic language spoken as a first language by Faroe Islanders, residing on the Faroe Islands and in other areas, mainly Denmark.",
+      "flag": "🇫🇴"
+    },
+    {
+      "id": "farsi-1",
+      "phrase": "Sob Bekhair  صبح بخیر",
+      "description": "Persian is an ancient language belonging to the Iranian branch of the Indo-Iranian subdivision of the Indo-European languages. It is a pluricentric language predominantly spoken and used officially within Iran, Afghanistan, and Tajikistan.",
+      "flag": "🇮🇷"
+    },
+    {
+      "id": "fijian-1",
+      "phrase": "Ni sa yadra",
+      "description": "Fijian is an Austronesian language of the Malayo-Polynesian family. It is an official language of Fiji spoken by some 350,000–450,000 ethnic Fijians as a native language.",
+      "flag": "🇫🇯"
+    },
+    {
+      "id": "finnish-1",
+      "phrase": "Hyvää huomenta",
+      "description": "Finnish is a Finno-Ugric language spoken only in Finland as the official language and by ethnic Finns elsewhere in Scandinavia.",
+      "flag": "🇫🇮"
+    },
+    {
+      "id": "flemish-1",
+      "phrase": "Goeije morn",
+      "description": "Native to the historical region of Flanders in northern Belgium, Flemish is a Low Franconian dialect cluster of the Dutch language. It is sometimes referred to as Flemish Dutch, Belgian Dutch, or Southern Dutch spoken by over 6 million people.",
+      "flag": "🇧🇪"
+    },
+    {
+      "id": "french-1",
+      "phrase": "Bonjour",
+      "description": "French is a Romance language of the Indo-European family spoken by over 354 million people in France and around the world. It is the third most spoken language in Europe, the official language of 29 countries, spoken in parts of Africa, North America, and South America.",
+      "flag": "🇫🇷"
+    },
+    {
+      "id": "frisian-1",
+      "phrase": "Goeie moarn",
+      "description": "The Frisian languages are a closely related group of Germanic languages, spoken by about 500,000 Frisian people, who live on the southern fringes of the North Sea in the Netherlands and Germany.",
+      "flag": "🇩🇪"
+    },
+    {
+      "id": "friulian-1",
+      "phrase": "Bundì",
+      "description": "Friulian or Friulan is a Romance language of the Rhaeto-Romance family. It is spoken in the Friuli region of northeastern Italy with around 600,000 total speakers.",
+      "flag": "🇮🇹"
+    },
+    {
+      "id": "galician-1",
+      "phrase": "Bos días",
+      "description": "Galician is a Romance language spoken by around 2.4 million people in Galicia, a region in northwestern Spain, where it is the official language.",
+      "flag": "🇪🇸"
+    },
+    {
+      "id": "georgian-1",
+      "phrase": "დილა მშვიდობისა Dila mushwidobisa",
+      "description": "Georgian is the official language of Georgia and the country’s most widely spoken language with over 4.1 million people.",
+      "flag": "🇬🇪"
+    },
+    {
+      "id": "greek-1",
+      "phrase": "Καλημέρα (Kaliméra)",
+      "description": "Greek (ελληνικά) belongs to the Hellenic branch of the Indo-European language family, mainly spoken in Greece and Cyprus an an official language. It has the longest documented history of any living Indo-European language, spanning more than 3000 years of written records. There are about 13.1 million speakers of Greek worldwide and it is recognised as a minority language in Albania, Armenia, Hungary, Italy, Romania, Turkey and Ukraine.",
+      "flag": "🇬🇷"
+    },
+    {
+      "id": "greenlandic-1",
+      "phrase": "Iterluarit",
+      "description": "Greenlandic falls under the Eskimo–Aleut language family, spoken by around 57,000 Greenlandic Inuit people in Greenland.",
+      "flag": "🇬🇱"
+    },
+    {
+      "id": "haitian-1",
+      "phrase": "Bonjou",
+      "description": "Haitian Creole (kreyòl ayisyen)) is a French-based creole language spoken by 10–12 million people worldwide and the only language of most Haitians. Along with French it is one of the official languages of Haiti.",
+      "flag": "🇭🇹"
+    },
+    {
+      "id": "hausa-1",
+      "phrase": "Ina kwana",
+      "description": "Hausa language, the most important indigenous bridge language in West and Central Africa, spoken as a first or second language by about 40–50 million people. It belongs to the Western branch of the Chadic language family within the Afro-Asiatic language phylum. It is spoken mainly in northern Nigeria and Niger, and also in Benin, Burkina Faso, Cameroon, the Central African Republic (CAR), Chad, Congo, Eritrea, Germany, Ghana, Sudan and Togo.",
+      "flag": "🇹🇩"
+    },
+    {
+      "id": "hawaiian-1",
+      "phrase": "Aloha kakahiaka",
+      "description": "The Hawaiian language is a Polynesian language that takes its name from Hawaiʻi, the largest island in the tropical North Pacific archipelago where it developed. Hawaiian, along with English, is an official language of the State of Hawaii, one of the best islands to visit.",
+      "flag": "🏴󠁵󠁳󠁨󠁩󠁿"
+    },
+    {
+      "id": "hebrew-1",
+      "phrase": "Boker tov בוקר טוב",
+      "description": "Hebrew is a Northwest Semitic language spoken by over nine million people worldwide. Historically, it is regarded as the language of the Israelites and their ancestors. It is written using its own script from right to left.",
+      "flag": "🇮🇱"
+    },
+    {
+      "id": "hindi-1",
+      "phrase": "नमस्ते namaste",
+      "description": "Hindi (हिन्दी) is an Indo-European language spoken in India, Nepal, and throughout the Indian diaspora. Hindi is descended from Sanskrit, sometimes called “the mother of all languages.” While there are 22 official languages and over 1,000 dialects of India, Hindi and English take precedence in government affairs. It is a link-language for over half of India’s population.",
+      "flag": "🇮🇳"
+    },
+    {
+      "id": "hmong-1",
+      "phrase": "Zoo thaum sawv ntxov",
+      "description": "Hmong is a Hmong-Mien language spoken by about 2.6 million people in China, Vietnam, Laos, Thailand, USA, and French Guiana.",
+      "flag": "🇻🇳"
+    },
+    {
+      "id": "hungarian-1",
+      "phrase": "Jó reggelt",
+      "description": "Hungarian is a Uralic language of the Ugric branch spoken in Hungary and parts of several neighbouring countries. It is the official language of Hungary and one of the 24 official languages of the European Union.",
+      "flag": "🇭🇺"
+    },
+    {
+      "id": "icelandic-1",
+      "phrase": "Góðan daginn",
+      "description": "Icelandic (íslenska) is a North Germanic language spoken in Iceland as its official language. It’s most closely related to Faroese and Western Norwegian and has around 314,000 speakers. The language is more conservative than most other Western European languages.",
+      "flag": "🇮🇸"
+    },
+    {
+      "id": "igbo-1",
+      "phrase": "Ụtụtụ ọma",
+      "description": "Igbo is the principal native language of the Igbo people of southeastern Nigeria with around 45 million speakers and over 20 dialects.",
+      "flag": "🇳🇬"
+    },
+    {
+      "id": "indo-bahasa-1",
+      "phrase": "Selamat pagi",
+      "description": "Indonesian (bahasa Indonesia) is the official language of Indonesia.With over 230 million speakers, it is one of the most widely spoken languages in the world. It is a group of varieties of Malay, an Austronesian language that has been used as the common language in the multilingual Indonesian archipelago for centuries. Indonesia uses the Latin alphabet system and Arabic numerals.",
+      "flag": "🇮🇩"
+    },
+    {
+      "id": "irish-1",
+      "phrase": "Maidin mhaith",
+      "description": "Irish (Gaeilge) is one of the three Goidelic languages, along with Scottish Gaelic and Manx. This Goidelic branch together with the Brythonic branch (Welsh, Cornish and Breton) form the Celtic language family.",
+      "flag": "🇮🇪"
+    },
+    {
+      "id": "italian-1",
+      "phrase": "Buongiorno",
+      "description": "Italian (Italiano) is a Romance language of the Indo-European language family spoken by over 90 million people, the vast majority of which are in Italy, Sicily and Sardinia. It is the official language of Italy, San Marino, and the Vatican City, closely descended from Latin.",
+      "flag": "🇮🇹"
+    },
+    {
+      "id": "japanese-1",
+      "phrase": "おはようございます (Ohayō gozaimasu)",
+      "description": "Japanese (日本語 Nihongo) is an East Asian language of the Japonic language family. It is spoken by about 125 million people, mostly in Japan, where it is the official and national language. Bowing, dating back to the 5th century, is a huge part of Japanese culture and is a sign of respect. In Japan, people readily bow to one another rather than actually saying the words.",
+      "flag": "🇯🇵"
+    },
+    {
+      "id": "jamaican-1",
+      "phrase": "Gud mawnin",
+      "description": "Jamaican Patois, often also referred to as Jamaican Creole, is an English-based creole language with West African influences spoken mainly in Jamaica. Belonging to the English Creole language family, it is spoken by the the majority of Jamaicans with over 3 million native speakers.",
+      "flag": "🇯🇲"
+    },
+    {
+      "id": "javanese-1",
+      "phrase": "Sugeng énjing",
+      "description": "Javanese is the language of the Javanese people of the island of Java, in Indonesia that is the native language of more than 98 million people.",
+      "flag": "🇮🇩"
+    },
+    {
+      "id": "kannada-1",
+      "phrase": "ಶುಭೋದಯ shubhodaya",
+      "description": "Kannada, spoken by nearly 45 million native speakers, is a Dravidian language of the people of Karnataka in southwestern India, and by significant linguistic minorities in the states of Maharashtra, Andhra Pradesh, Tamil Nadu, Telangana, Kerala and abroad.",
+      "flag": "🇮🇳"
+    },
+    {
+      "id": "kazakh-1",
+      "phrase": "Қайырлы таң Qayırlı tañ",
+      "description": "Kazakh is a Turkic language of the Kipchak branch spoken in Central Asia and the official language of Kazakhstan. The language comprises 21 million native speakers including regions of Bayan-Ulgii in Mongolia and the Dzungarian region of Xinjiang, China.",
+      "flag": "🇰🇿"
+    },
+    {
+      "id": "korean-1",
+      "phrase": "안녕하십니까 (annyeong hashimnikka)",
+      "description": "Korean, an East Asian language, is the official language of South Korea (Republic of Korea) and North Korea (Democratic People’s Republic of Korea) spoken by more than 75 million people.",
+      "flag": "🇰🇷"
+    },
+    {
+      "id": "lao-1",
+      "phrase": "ສະ​ບາຍ​ດີ​ຕອນ​ເຊົ້າ - Arrun Suo Sdey",
+      "description": "Lao is the main language of Laos. It is a Kra–Dai language serving as a common language among all citizens of Laos, who speak approximately 90 other languages, many of which are unrelated to Lao. Modern Lao is heavily influenced by the Thai language and comprises over 30 million native speakers.",
+      "flag": "🇱🇦"
+    },
+    {
+      "id": "latin-1",
+      "phrase": "Bonum mane",
+      "description": "Latin was the dominant language of the Roman Empire from 6th century BC to 600 AD. When the Roman Empire collapsed, Latin evolved into the various languages that we know today. Italian, French, Portuguese, Spanish and Romanian all consider Latin as their parent tongue. Latin is a classical language belonging to the Italic branch of the Indo-European languages.",
+      "flag": "🏳"
+    },
+    {
+      "id": "latin-2",
+      "phrase": "Quid agis mane",
+      "description": "Latin was the dominant language of the Roman Empire from 6th century BC to 600 AD. When the Roman Empire collapsed, Latin evolved into the various languages that we know today. Italian, French, Portuguese, Spanish and Romanian all consider Latin as their parent tongue. Latin is a classical language belonging to the Italic branch of the Indo-European languages.",
+      "flag": "🏳"
+    },
+    {
+      "id": "latvian-1",
+      "phrase": "Labrīt",
+      "description": "Latvian (latviešu valoda) is an Indo-European Eastern Baltic language spoken in the Baltic region. It is the official language of Latvia and one of the official languages of the European Union.",
+      "flag": "🇱🇻"
+    },
+    {
+      "id": "lithuanian-1",
+      "phrase": "Labas rytas",
+      "description": "Lithuanian (lietuvių kalba) is an Eastern Baltic language spoken in the Baltic region as the official language of Lithuania. It is also one of the official languages of the European Union spoken by just under 3 million native speakers. The language is one of the oldest in the world.",
+      "flag": "🇱🇹"
+    },
+    {
+      "id": "luxembourgish-1",
+      "phrase": "Gudde Moien",
+      "description": "Luxembourgish is a West Germanic language that is spoken mainly in Luxembourg. About 390,000 people speak Luxembourgish worldwide.",
+      "flag": "🇱🇺"
+    },
+    {
+      "id": "luganda-1",
+      "phrase": "Wasuze otya nno",
+      "description": "Luganda, a Bantu language, is an official language of Uganda along with English and Swahili. It is spoken primarily in Kampala, but may be understood in much of the country and in the African Great Lakes region.",
+      "flag": "🇺🇬"
+    },
+    {
+      "id": "macedonian-1",
+      "phrase": "Добро утро (Dobro utro)",
+      "description": "Macedonian, the official language of the Republic of North Macedonia, is a south Slavic language spoken as a first language by 2 million people.",
+      "flag": "🇲🇰"
+    },
+    {
+      "id": "malagasy-1",
+      "phrase": "Salama",
+      "description": "Malagasy is the national language of Madagascar belonging to the Austronesian Malayo-Polynesia family of languages spoken by 25 million people.",
+      "flag": "🇲🇬"
+    },
+    {
+      "id": "malay-1",
+      "phrase": "Selamat Pagi",
+      "description": "Malay (Bahasa Melayu) is an Austronesian language spoken as the sole official language of Malaysia and Brunei. It is also heard in Indonesia, Singapore, and Thailand at a total of 250 – 300 million speakers.",
+      "flag": "🇲🇾"
+    },
+    {
+      "id": "maltese-1",
+      "phrase": "Bonġornu",
+      "description": "Maltese, a language of central Semitic origin written in the Latin script, is the national language of the island of Malta. It is spoken by around 420,000 people on the Mediterranean islands of Malta, Gozo and Comino. The Maltese language developed from Sicilian Arabic, Over the centuries, it has incorporated many words derived from English, Italian and French.",
+      "flag": "🇲🇹"
+    },
+    {
+      "id": "maori-1",
+      "phrase": "Ata mārie",
+      "description": "Māori is an Eastern Polynesian language spoken by the Māori people, the indigenous population of New Zealand. it has also gained recognition as one of New Zealand’s official languages.",
+      "flag": "🇳🇿"
+    },
+    {
+      "id": "mongolia-1",
+      "phrase": "Өглөөний мэнд Öglouny mend",
+      "description": "Mongolian is the official language of Mongolia and both the most widely-spoken and best-known member of the Mongolic language family. It is an Altaic language spoken by approximately 5 million people in Mongolia, China, Afghanistan, and Russia.",
+      "flag": "🇲🇳"
+    },
+    {
+      "id": "navajo-1",
+      "phrase": "yá’át’ééh abíní",
+      "description": "Navajo is an American Indian language of the Athabascan family, spoken by around 170, 000 Navajo people in the Southwestern United States regions of Arizona, New Mexico, Utah, and Colorado.",
+      "flag": "🚩"
+    },
+    {
+      "id": "nepali-1",
+      "phrase": "namaste नमस्ते",
+      "description": "Nepali (नेपाली), is an Indo-Aryan language of the sub-branch of Eastern Pahari written in Devanagari script It is the sole official language of Nepal and one of the 22 scheduled languages of India. While most Nepalese people speak at least some Nepali, there are more than 100 different languages and dialects spoken in Nepal.",
+      "flag": "🇳🇵"
+    },
+    {
+      "id": "norwegian-1",
+      "phrase": "God morgen",
+      "description": "Norwegian (norsk) is a Germanic language derived from Old Norse spoken primarily in Norway by over 5 million people where it is the official language.",
+      "flag": "🇳🇴"
+    },
+    {
+      "id": "polish-1",
+      "phrase": "Dzień dobry",
+      "description": "Polish (polski) is a West Slavic language spoken by about 45 million people. Said to be one of the hardest languages to learn, it is the official language of Poland. It is understood and can be used for communication in the western parts of Ukraine, Belarus and Lithuania.",
+      "flag": "🇵🇱"
+    },
+    {
       "id": "portugal-1",
       "phrase": "Bom dia",
       "description": "Portuguese is the sole official language of Portugal, Angola, Mozambique, Guinea-Bissau, Cape Verde, São Tomé and Príncipe, and Brazil, while having co-official language status in East Timor, Equatorial Guinea, and Macau. A Portuguese-speaking person or nation is referred to as Lusophone (lusófono).",
       "flag": "🇵🇹"
+    },
+    {
+      "id": "punjab-1",
+      "phrase": "ਸ਼ੁਭ ਸਵੇਰ - Sat Shri Akal",
+      "description": "Punjabi is an Indo-Aryan language with more than 130 million native speakers in the Indian subcontinent and around the world. It is the 10th most spoken language in the world.",
+      "flag": "🇮🇳"
+    },
+    {
+      "id": "romanian-1",
+      "phrase": "Bună dimineața",
+      "description": "Romanian (limba română) is a Balkan Romance language spoken by approximately 24–26 million people as a native language, primarily in Romania and Moldova, and by another 4 million people as a second language. Although it descended from Vulgar Latin, Romanian was influenced by Slavic and Greek languages in the Middle Ages. It is an official and national language of both Romania and Moldova.",
+      "flag": "🇷🇴"
+    },
+    {
+      "id": "russian-1",
+      "phrase": "Доброе утро (Dobroye utro)",
+      "description": "Russian is an East Slavic language spoken by 300+ million people worldwide. It is  is an official language in the Russian Federation, Belarus, Kazakhstan and Kyrgyzstan, and many other people in Central Asia, the Baltic states, the Caucasus, and Eastern Europe know it as a second language. Commonly written in Cyrillic, it is the 8th most widely spoken language in the world.",
+      "flag": "🇷🇺"
+    },
+    {
+      "id": "samoan-1",
+      "phrase": "oa mai le ataeao",
+      "description": "Samoan is the official language spoken in the Samoan Islands, which is made up of the Independent State of Samoa and the American Samoa. The language is the most spoken of the Polynesian language family with a total of 510,000 speakers worldwide.",
+      "flag": "🇼🇸"
+    },
+    {
+      "id": "sanskrit-1",
+      "phrase": "सुप्रभातम् (suprabhātam)",
+      "description": "Sanskrit is a 4,000-year-old classical language that belongs to the Indo-Aryan branch of the Indo-European languages. Known as ‘the mother of all languages,’ Sanskrit is the root of many, but not all, Indian languages. It is also the liturgical language of Buddhism, Hinduism, and Jainism. Sanskrit has less than 15,000 native speakers at present and is mostly used by Hindu priests during religious ceremonies.",
+      "flag": "🏳"
+    },
+    {
+      "id": "scots-gaelic-1",
+      "phrase": "Madainn mhath",
+      "description": "Scots Gaelic is a Goidelic language of the Celtic and Indo-European language family, native to the Gaels of Scotland. As a Goidelic language, Scottish Gaelic, like Modern Irish and Manx, developed out of Middle Irish.",
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+    },
+    {
+      "id": "serbian-1",
+      "phrase": "Добро јутро (Dobro utro)",
+      "description": "Serbian is a South Slavic language spoken mainly in Serbia, Bosnia and Herzegovina, Montenegro, Croatia and Macedonia by about 9 million people. Serbian is the official and main language of Serbia and Montenegro.",
+      "flag": "🇷🇸"
+    },
+    {
+      "id": "shangainese-wu-1",
+      "phrase": "侬早 (nóng zō)",
+      "description": "Shanghainese, part of the Sino-Tibetan language family, is a variety of Wu Chinese spoken in the central districts of the City of Shanghai and its surrounding areas by 10 – 14 million speakers.",
+      "flag": "🇨🇳"
+    },
+    {
+      "id": "slovak-1",
+      "phrase": "Dobré ráno",
+      "description": "Slovak, the official language of Slovakia, is a West Slavic language where it is spoken by approximately 5.6 million people.",
+      "flag": "🇸🇰"
+    },
+    {
+      "id": "slovak-2",
+      "phrase": "Dobrý deň",
+      "description": "Slovak, the official language of Slovakia, is a West Slavic language where it is spoken by approximately 5.6 million people.",
+      "flag": "🇸🇰"
+    },
+    {
+      "id": "slovenian-1",
+      "phrase": "Dobro jutro",
+      "description": "Slovenian, an Indo-European language of the South Slavic language branch is the official and national language of Slovenia spoken by less than 3 million people.",
+      "flag": "🇸🇮"
+    },
+    {
+      "id": "slovenian-2",
+      "phrase": "Dober dan",
+      "description": "Slovenian, an Indo-European language of the South Slavic language branch is the official and national language of Slovenia spoken by less than 3 million people.",
+      "flag": "🇸🇮"
+    },
+    {
+      "id": "somali-1",
+      "phrase": "Subax wanaagsan",
+      "description": "Somali, an Afro-Asiatic language spoken by over 16 million people, is an official language of Somalia, a national language in Djibouti, and a working language in the Somali Region of Ethiopia.",
+      "flag": "🇸🇴"
+    },
+    {
+      "id": "swedish-1",
+      "phrase": "God morgon",
+      "description": "Swedish is a North Germanic language, closely related to Norwegian and Danish spoken by around 10 million people. A descendant of Old Norse, it is the national language of Sweden and the official language of the Åland Islands.",
+      "flag": "🇸🇪"
+    },
+    {
+      "id": "swiss-german-1",
+      "phrase": "Guten Morgen",
+      "description": "Swiss German is the collective name for the great variety of Upper German dialects spoken in Switzerland, Liechtenstein, in the Austrian province of Vorarlberg, in parts of Baden-Württemberg in Germany and Alsace in France.",
+      "flag": "🇨🇭"
+    },
+    {
+      "id": "tagalog-1",
+      "phrase": "Magandang umaga po",
+      "description": "Tagalog is an Austronesian language spoken as a first language by a quarter of the population of the Philippines and as a second language by the majority. Its standardized form, officially named Filipino, is the national language of the Philippines, and is one of two official languages alongside English.",
+      "flag": "🇵🇭"
+    },
+    {
+      "id": "tagalog-2",
+      "phrase": "Magandang umaga",
+      "description": "Tagalog is an Austronesian language spoken as a first language by a quarter of the population of the Philippines and as a second language by the majority. Its standardized form, officially named Filipino, is the national language of the Philippines, and is one of two official languages alongside English.",
+      "flag": "🇵🇭"
+    },
+    {
+      "id": "tahitian-1",
+      "phrase": "‘Ia ora na ‘oe",
+      "description": "Tahitian belongs to the Eastern Polynesian language group, spoken mainly on the Society Islands in French Polynesia and Bora Bora.",
+      "flag": "🇦🇹"
+    },
+    {
+      "id": "taiwanese-1",
+      "phrase": "爻早 (gau-tsa)",
+      "description": "Taiwanese Hokkien is the Hokkien dialect of Min Nan as spoken by about 70 percent of the population of Taiwan.",
+      "flag": "🇹🇼"
+    },
+    {
+      "id": "telugu-1",
+      "phrase": "శుభోదయం subhodayamu",
+      "description": "Telugu is a Dravidian language spoken in the Indian states of Andhra Pradesh, Telangana and the union territories of Puducherry by 75 million Telugu people.",
+      "flag": "🇮🇳"
+    },
+    {
+      "id": "thai-1",
+      "phrase": "สวัสดีครับ (sà-wàt-dee kráp)",
+      "description": "Thai ภาษาไทย, the sole official and national language of Thailand, spoken by 50 million people, belongs to the Tai group of the Kra–Dai language family of Southeast Asia.",
+      "flag": "🇹🇭"
+    },
+    {
+      "id": "thai-2",
+      "phrase": "สวัสดีค่ะ (sà-wàt-dee kâ)",
+      "description": "Thai ภาษาไทย, the sole official and national language of Thailand, spoken by 50 million people, belongs to the Tai group of the Kra–Dai language family of Southeast Asia.",
+      "flag": "🇹🇭"
+    },
+    {
+      "id": "tibet-1",
+      "phrase": "སྔ་དྲོ་བདེ་ལེགས། (nga-to delek)",
+      "description": "Tibetan is an official language of the Tibet Autonomous Region of the People’s Republic of China. The Tibetic languages are a cluster of Tibeto-Burman languages descended from Old Tibetan, spoken across a wide area of eastern Central Asia bordering the Indian subcontinent, including the Tibetan Plateau and the Himalayas.",
+      "flag": "🏳"
+    },
+    {
+      "id": "turkish-1",
+      "phrase": "Günaydın",
+      "description": "Turkish is a Turkic language believed to be of the Altaic language family spoken mainly in Turkey, Northern Cyprus, Cyprus and other countries of the former Ottoman Empire by about 88 million people.",
+      "flag": "🇹🇷"
+    },
+    {
+      "id": "turkmen-1",
+      "phrase": "Ertiriňiz haýyrly bolsun",
+      "description": "Turkmen belongs to the Turkic language family and is spoken by around 11 million Turkmen people of Central Asia, mainly in Turkmenistan, Afghanistan, and Iran.",
+      "flag": "🇹🇲"
+    },
+    {
+      "id": "ukrainian-1",
+      "phrase": "Добрий ранок (Dobre rano)",
+      "description": "Ukrainian is an Eastern Slavic language spoken mainly in Ukraine by about 51 million people.",
+      "flag": "🇺🇦"
+    },
+    {
+      "id": "ukrainian-2",
+      "phrase": "Доброго ранку (Dobroho ranku)",
+      "description": "Ukrainian is an Eastern Slavic language spoken mainly in Ukraine by about 51 million people.",
+      "flag": "🇺🇦"
+    },
+    {
+      "id": "urdu-1",
+      "phrase": "صبح بخیر",
+      "description": "Urdu is the official national language and lingua franca of Pakistan. It is a member of the Indo-Aryan group within the Indo-European family of languages and is mutually intelligible with Hindi.",
+      "flag": "🇵🇰"
+    },
+    {
+      "id": "uzbek-1",
+      "phrase": "Xayrli tong",
+      "description": "Uzbek is a Turkic language that is the official national language of Uzbekistan spoken by around 27 million people.",
+      "flag": "🇺🇿"
+    },
+    {
+      "id": "vietnamese-1",
+      "phrase": "Chào buổi sáng",
+      "description": "Vietnamese is an Austroasiatic language spoken mainly in Vietnam, where it is the national and official language, by about 82 million people.",
+      "flag": "🇻🇳"
+    },
+    {
+      "id": "welsh-1",
+      "phrase": "Bore da",
+      "description": "Welsh is a Brittonic language of the Celtic language family spoken natively in Wales, and by some in England.",
+      "flag": "🏴󠁧󠁢󠁷󠁬󠁳󠁿"
+    },
+    {
+      "id": "zulu-1",
+      "phrase": "Sawubona",
+      "description": "Zulu is a member of the Bantu/Nguni family of languages. It is one of the official languages of South Africa spoken by about 10 million people mainly in Zululand and northern Natal in South Africa and also in Botswana, Lesotho, Malawi, Mozambique and Eswatini.",
+      "flag": "🇿🇦"
     }
   ]
 }
