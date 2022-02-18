@@ -58,8 +58,10 @@ export const meta: MetaFunction = ({ data }: { data: Data | undefined }) => {
       title: 'A new good morning every day',
       description: 'A random good morning phrase in a different language every day',
       'og:title': 'A new good morning every day',
+      'og:type': 'website',
       'og:description': 'A random good morning phrase in a different language every day',
       'og:image': '',
+      'twitter:card': 'summary_large_image',
     };
   }
   const goodMorningOfTheDay = data.goodMorning;
@@ -67,8 +69,10 @@ export const meta: MetaFunction = ({ data }: { data: Data | undefined }) => {
     title: `${goodMorningOfTheDay.flag} | ${goodMorningOfTheDay.phrase}`,
     description: goodMorningOfTheDay.description,
     'og:title': `${goodMorningOfTheDay.flag} | ${goodMorningOfTheDay.phrase}`,
+    'og:type': 'website',
     'og:description': goodMorningOfTheDay.description,
     'og:image': `${data.ENV.WEBSITE_URL}/social/${goodMorningOfTheDay.phrase}.png`,
+    'twitter:card': 'summary_large_image',
   };
 };
 
