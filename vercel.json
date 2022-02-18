@@ -1,12 +1,15 @@
 {
-  "build": {
-    "env": {
-      "ENABLE_FILE_SYSTEM_API": "1"
+  "builds": [
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
     },
-    "functions": {
-      "api/index.js": {
+    {
+      "src": "server/index.js",
+      "use": "@vercel/node",
+      "config": {
         "includeFiles": ["assets/**"]
       }
     }
-  }
+  ]
 }
