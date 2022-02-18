@@ -40,7 +40,9 @@ export const loader = () => {
     goodMorning: getGoodMorningOfTheDay(data.list).solution,
     ENV: {
       WEBSITE_URL:
-        process.env.NODE_ENV === 'development' ? process.env.WEBSITE_URL : process.env.VERCEL_URL,
+        process.env.NODE_ENV === 'development'
+          ? process.env.WEBSITE_URL
+          : `https://${process.env.VERCEL_URL}`,
     },
   } as Data;
 };
