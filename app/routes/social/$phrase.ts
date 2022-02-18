@@ -1,6 +1,15 @@
-import { createCanvas, loadImage } from 'canvas';
+import { createCanvas, loadImage, registerFont } from 'canvas';
 import { getLines } from '../../utils/canvasUtils';
 import { parseEmojiFlag } from '../../utils/parseEmojiFlag';
+
+registerFont('assets/fonts/Inter/Inter-Regular.otf', {
+  family: 'Inter',
+  weight: '400',
+});
+registerFont('assets/fonts/Inter/Inter-Bold.otf', {
+  family: 'Inter',
+  weight: '700',
+});
 
 type GenerateSocialImage = {
   // Author name to display.
@@ -36,7 +45,7 @@ const generateImage = async ({
   height = 630,
   fontSize = 60,
   margin = 60,
-  font = 'sans-serif',
+  font = 'Inter',
 }: GenerateSocialImage) => {
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext('2d');
