@@ -5,9 +5,17 @@
       "ENABLE_FILE_SYSTEM_API": "1"
     }
   },
-  "functions": {
-    "api/index": {
-      "includeFiles": "assets/**"
+  "builds": [
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "server.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["assets/**"]
+      }
     }
-  }
+  ]
 }
