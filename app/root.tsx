@@ -1,7 +1,7 @@
 import { Links, LinksFunction, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from 'remix';
 import { useEffect } from 'react';
 import globalStylesUrl from './styles/global.css';
-import tailwindStyles from './styles/tailwindy.css';
+import tailwindStyles from './styles/tailwind.css';
 
 export const links: LinksFunction = () => {
   return [

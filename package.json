@@ -5,10 +5,10 @@
   "license": "",
   "scripts": {
     "build": "npm run build:css && remix build",
-    "build:css": "tailwindcss -o ./app/styles/tailwindy.css",
+    "build:css": "tailwindcss -o ./app/styles/tailwind.css",
     "envDev": "node -r dotenv/config node_modules/.bin/remix dev",
     "dev": "concurrently \"npm run dev:css\" \"npm run envDev\"",
-    "dev:css": "tailwindcss -o ./app/styles/tailwindy.css --watch",
+    "dev:css": "tailwindcss -o ./app/styles/tailwind.css --watch",
     "postinstall": "remix setup node",
     "start": "remix-serve build",
     "vercel-build": "yum install libuuid-devel libmount-devel zlib && cp /lib64/{libuuid,libmount,libblkid,libz}.so.1 node_modules/canvas/build/Release/"
