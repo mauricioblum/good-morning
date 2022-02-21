@@ -1,12 +1,18 @@
 import { createCanvas, loadImage, registerFont } from 'canvas';
 import { getLines } from '../../utils/canvasUtils';
 import { parseEmojiFlag } from '../../utils/parseEmojiFlag';
+import path from 'path';
 
-registerFont('../fonts/Inter/Inter-Regular.otf', {
+const interRegular = path.resolve(__dirname, '..', 'fonts', 'Inter', 'Inter-Regular.otf');
+console.log('🚀 ~ interRegular', interRegular);
+const interBold = path.resolve(__dirname, '..', 'fonts', 'Inter', 'Inter-Bold.otf');
+console.log('🚀 ~ interBold', interBold);
+
+registerFont(interRegular, {
   family: 'Inter',
   weight: '400',
 });
-registerFont('../fonts/Inter/Inter-Bold.otf', {
+registerFont(interBold, {
   family: 'Inter',
   weight: '700',
 });
