@@ -2,20 +2,21 @@ import { createCanvas, loadImage, registerFont } from 'canvas';
 import { getLines } from '../../utils/canvasUtils';
 import { parseEmojiFlag } from '../../utils/parseEmojiFlag';
 import path from 'path';
+import fs from 'fs';
 
 const interRegular = path.resolve(process.cwd(), '../../', 'fonts/Inter/Inter-Regular.otf');
 console.log('🚀 ~ interRegular', interRegular);
 const interBold = path.resolve(process.cwd(), '../../', 'fonts/Inter/Inter-Bold.otf');
 console.log('🚀 ~ interBold', interBold);
 
-registerFont(interRegular, {
-  family: 'Inter',
-  weight: '400',
-});
-registerFont(interBold, {
-  family: 'Inter',
-  weight: '700',
-});
+// registerFont(interRegular, {
+//   family: 'Inter',
+//   weight: '400',
+// });
+// registerFont(interBold, {
+//   family: 'Inter',
+//   weight: '700',
+// });
 
 type GenerateSocialImage = {
   // Author name to display.
@@ -55,6 +56,27 @@ const generateImage = async ({
 }: GenerateSocialImage) => {
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext('2d');
+
+  fs.readdir(path.resolve(process.cwd(), '../../'), (err, files) => {
+    console.log('root folder');
+    files.forEach((file) => {
+      console.log(file);
+    });
+  });
+
+  fs.readdir(path.resolve(process.cwd(), '../'), (err, files) => {
+    console.log('root folder 1');
+    files.forEach((file) => {
+      console.log(file);
+    });
+  });
+
+  fs.readdir(path.resolve(process.cwd()), (err, files) => {
+    console.log('current folder');
+    files.forEach((file) => {
+      console.log(file);
+    });
+  });
 
   const gradient = ctx.createLinearGradient(0, width, width, height);
   gradient.addColorStop(0.45, '#87CEEB');
