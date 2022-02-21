@@ -24,7 +24,6 @@ export const ToggleButton: React.FC<ToggleButtonProps> = (props) => {
 
   const toggleTheme = () => {
     if (dotRef.current && localStorage.themePreference === 'dark') {
-      console.log('🚀 ~ useEffect ~ themePreference', localStorage.themePreference);
       setIcon(props.icons?.checked || '🌙');
       if (inputRef.current) {
         inputRef.current.checked = true;

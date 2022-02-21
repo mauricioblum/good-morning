@@ -132,7 +132,7 @@ ${url}`;
       </div>
       <p
         translate="no"
-        className="text-center text-gray-700 md:text-8xl text-6xl font-bold transition-all"
+        className="text-center text-gray-700 md:text-9xl text-8xl font-bold transition-all"
       >
         {goodMorningOfTheDay.flag}
       </p>
