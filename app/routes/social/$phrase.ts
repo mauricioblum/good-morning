@@ -3,9 +3,9 @@ import { getLines } from '../../utils/canvasUtils';
 import { parseEmojiFlag } from '../../utils/parseEmojiFlag';
 import path from 'path';
 
-const interRegular = path.resolve(process.cwd(), 'public', 'fonts/Inter/Inter-Regular.otf');
+const interRegular = path.resolve(process.cwd(), '../../', 'fonts/Inter/Inter-Regular.otf');
 console.log('🚀 ~ interRegular', interRegular);
-const interBold = path.resolve(process.cwd(), 'public', 'fonts/Inter/Inter-Bold.otf');
+const interBold = path.resolve(process.cwd(), '../../', 'fonts/Inter/Inter-Bold.otf');
 console.log('🚀 ~ interBold', interBold);
 
 registerFont(interRegular, {
