@@ -2,17 +2,25 @@ import { createCanvas, loadImage, registerFont } from 'canvas';
 import { getLines } from '../../utils/canvasUtils';
 import path from 'path';
 
-const interRegular = path.resolve(process.cwd(), '../../', 'fonts/Inter/Inter-Regular.otf');
-const interBold = path.resolve(process.cwd(), '../../', 'fonts/Inter/Inter-Bold.otf');
+const dejaVuRegular = path.resolve(
+  process.cwd(),
+  '../../',
+  '/usr/share/fonts/dejavu/DejaVuSans.ttf'
+);
+const dejaVuBold = path.resolve(
+  process.cwd(),
+  '../../',
+  '/usr/share/fonts/dejavu/DejaVuSans-Bold.ttf'
+);
 
-// registerFont(interRegular, {
-//   family: 'Inter',
-//   weight: '400',
-// });
-// registerFont(interBold, {
-//   family: 'Inter',
-//   weight: '700',
-// });
+registerFont(dejaVuRegular, {
+  family: 'DejaVu Sans',
+  weight: '400',
+});
+registerFont(dejaVuBold, {
+  family: 'DejaVu Sans',
+  weight: '700',
+});
 
 type GenerateSocialImage = {
   // Author name to display.
