@@ -14,7 +14,6 @@ const Toast = React.forwardRef<ToastHandle, ToastProps>(({ message, timeout = 30
 
   const showToast = () => {
     if (ref) {
-      console.log('🚀 ~ showToast ~ ref', ref);
       setIsShowing('visible opacity-100');
       setTimeout(() => {
         setIsShowing('invisible opacity-0');
