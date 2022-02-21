@@ -92,6 +92,20 @@ export default function Index() {
     setWithLocalStorage(document.documentElement.classList[0] ? 'dark' : 'light');
   };
 
+  const shareText = () => {
+    const url = new URL(data.ENV.WEBSITE_URL);
+    const shareText = `${goodMorningOfTheDay.flag} | ${goodMorningOfTheDay.phrase} 
+    
+${url}`;
+
+    if (navigator) {
+      navigator.clipboard.writeText(shareText);
+      navigator.share({
+        text: shareText,
+      });
+    }
+  };
+
   return (
     <section className="flex flex-col items-center justify-center text-center h-screen px-5">
       <div className="flex absolute left-3 top-3">
@@ -119,7 +133,18 @@ export default function Index() {
       <h1 translate="no" className="md:text-8xl text-6xl font-bold mb-8 transition-all max-w-full">
         {goodMorningOfTheDay.phrase}
       </h1>
-      <p className="md:text-xl text-lg px-4 transition-all">{goodMorningOfTheDay.description}</p>
+      <p className="dark:text-white max-h-36 overflow-y-scroll md:overflow-visible md:max-h-auto md:text-xl text-lg px-4 transition-all">
+        {goodMorningOfTheDay.description}
+      </p>
+
+      <div className="share flex flex-col mt-10">
+        <button
+          onClick={shareText}
+          className="bg-slate-500 hover:bg-slate-400 text-white font-bold py-2 px-4 border-b-4 border-slate-700 hover:border-slate-500 rounded"
+        >
+          Share
+        </button>
+      </div>
     </section>
   );
 }
