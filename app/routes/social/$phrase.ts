@@ -4,29 +4,8 @@ import { parseEmojiFlag } from '../../utils/parseEmojiFlag';
 import path from 'path';
 import fs from 'fs';
 
-fs.readdir('./', (err, files) => {
-  console.log('reading root dir.');
-  files.forEach((file) => {
-    console.log(file);
-  });
-});
-
-fs.readdir('../', (err, files) => {
-  console.log('reading one top dir.');
-  files.forEach((file) => {
-    console.log(file);
-  });
-});
-
-fs.readdir('../../', (err, files) => {
-  console.log('reading two top dir.');
-  files.forEach((file) => {
-    console.log(file);
-  });
-});
-
-const interRegular = path.resolve('fonts/Inter/Inter-Regular.otf');
-const interBold = path.resolve('fonts/Inter/Inter-Bold.otf');
+const interRegular = path.resolve('./public', 'fonts/Inter/Inter-Regular.otf');
+const interBold = path.resolve('./public', 'fonts/Inter/Inter-Bold.otf');
 
 registerFont(interRegular, {
   family: 'Inter',
