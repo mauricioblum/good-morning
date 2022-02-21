@@ -1,14 +1,14 @@
 import { useLoaderData } from 'remix';
 import data from '../../data/data.json';
 
-interface ListItem {
+export interface ListItem {
   id: string;
   phrase: string;
   description: string;
   flag: string;
 }
 
-interface Data {
+export interface Data {
   goodMorning: ListItem;
   ENV: Record<string, string>;
 }
@@ -17,7 +17,7 @@ interface Data {
 //   return Math.floor(Math.random() * list.length);
 // }
 
-function getGoodMorningOfTheDay(goodMorningList: ListItem[]) {
+export function getGoodMorningOfTheDay(goodMorningList: ListItem[]) {
   const epochMs = new Date('January 1, 2022 00:00:00').valueOf();
   const msInDay = 86400000;
   // fake new date
