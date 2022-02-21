@@ -14,7 +14,6 @@ export const ToggleButton: React.FC<ToggleButtonProps> = (props) => {
   const [icon, setIcon] = useState<string>(props.icons?.notChecked || '🔆');
 
   const onToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('🚀 ~ onToggle ~ .target.checked', e.target.checked);
     setIcon(e.target.checked ? props.icons?.checked || '🔆' : props.icons?.notChecked || '🔆');
     if (dotRef.current) {
       dotRef.current.classList.toggle('translate-x-full');
@@ -23,14 +22,36 @@ export const ToggleButton: React.FC<ToggleButtonProps> = (props) => {
     props.onChange?.(e);
   };
 
-  useEffect(() => {
+  const toggleTheme = () => {
     if (dotRef.current && localStorage.themePreference === 'dark') {
+      console.log('🚀 ~ useEffect ~ themePreference', localStorage.themePreference);
       setIcon(props.icons?.checked || '🌙');
       if (inputRef.current) {
         inputRef.current.checked = true;
       }
       dotRef.current.classList.toggle('translate-x-full');
       dotRef.current.classList.toggle('bg-slate-800');
+    }
+  };
+
+  useEffect(() => {
+    if (localStorage.themePreference) {
+      if (localStorage.themePreference === 'dark') {
+        document.documentElement.classList.add('dark');
+        toggleTheme();
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    } else if (
+      !('themePreference' in localStorage) &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
+      document.documentElement.classList.add('dark');
+      localStorage.themePreference = 'dark';
+      toggleTheme();
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.themePreference = '';
     }
   }, []);
 
