@@ -2,11 +2,11 @@ import { createCanvas, loadImage, registerFont } from 'canvas';
 import { getLines } from '../../utils/canvasUtils';
 import { parseEmojiFlag } from '../../utils/parseEmojiFlag';
 
-registerFont('./fonts/Inter/Inter-Regular.otf', {
+registerFont('../fonts/Inter/Inter-Regular.otf', {
   family: 'Inter',
   weight: '400',
 });
-registerFont('./fonts/Inter/Inter-Bold.otf', {
+registerFont('../fonts/Inter/Inter-Bold.otf', {
   family: 'Inter',
   weight: '700',
 });
