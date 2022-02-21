@@ -2,11 +2,31 @@ import { createCanvas, loadImage, registerFont } from 'canvas';
 import { getLines } from '../../utils/canvasUtils';
 import { parseEmojiFlag } from '../../utils/parseEmojiFlag';
 import path from 'path';
+import fs from 'fs';
+
+fs.readdir('./', (err, files) => {
+  console.log('reading root dir.');
+  files.forEach((file) => {
+    console.log(file);
+  });
+});
+
+fs.readdir('../', (err, files) => {
+  console.log('reading one top dir.');
+  files.forEach((file) => {
+    console.log(file);
+  });
+});
+
+fs.readdir('../../', (err, files) => {
+  console.log('reading two top dir.');
+  files.forEach((file) => {
+    console.log(file);
+  });
+});
 
 const interRegular = path.resolve('fonts/Inter/Inter-Regular.otf');
-console.log('🚀 ~ interRegular', interRegular);
 const interBold = path.resolve('fonts/Inter/Inter-Bold.otf');
-console.log('🚀 ~ interBold', interBold);
 
 registerFont(interRegular, {
   family: 'Inter',
