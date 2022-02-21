@@ -1,18 +1,5 @@
-import { createCanvas, loadImage, registerFont } from 'canvas';
+import { createCanvas, loadImage } from 'canvas';
 import { getLines } from '../../utils/canvasUtils';
-import path from 'path';
-
-const dejaVuRegular = path.resolve('/usr/share/fonts/dejavu/DejaVuSans.ttf');
-const dejaVuBold = path.resolve('/usr/share/fonts/dejavu/DejaVuSans-Bold.ttf');
-
-registerFont(dejaVuRegular, {
-  family: 'DejaVu Sans',
-  weight: '400',
-});
-registerFont(dejaVuBold, {
-  family: 'DejaVu Sans',
-  weight: '700',
-});
 
 type GenerateSocialImage = {
   // Author name to display.
@@ -49,7 +36,7 @@ const generateImage = async ({
   height = 630,
   fontSize = 60,
   margin = 60,
-  font = 'DejaVu Sans',
+  font = 'Nimbus Sans',
 }: GenerateSocialImage) => {
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext('2d');
