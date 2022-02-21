@@ -2,16 +2,8 @@ import { createCanvas, loadImage, registerFont } from 'canvas';
 import { getLines } from '../../utils/canvasUtils';
 import path from 'path';
 
-const dejaVuRegular = path.resolve(
-  process.cwd(),
-  '../../',
-  '/usr/share/fonts/dejavu/DejaVuSans.ttf'
-);
-const dejaVuBold = path.resolve(
-  process.cwd(),
-  '../../',
-  '/usr/share/fonts/dejavu/DejaVuSans-Bold.ttf'
-);
+const dejaVuRegular = path.resolve('/usr/share/fonts/dejavu/DejaVuSans.ttf');
+const dejaVuBold = path.resolve('/usr/share/fonts/dejavu/DejaVuSans-Bold.ttf');
 
 registerFont(dejaVuRegular, {
   family: 'DejaVu Sans',
