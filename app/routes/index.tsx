@@ -49,6 +49,8 @@ import GithubIcon from '../components/GithubIcon';
 import { useLocalStorage } from '../utils/useLocalStorage';
 import { ToggleButton } from '../components/ToggleButton';
 import { parseEmojiFlag } from '../utils/parseEmojiFlag';
+import Toast, { ToastHandle } from '../components/Toast';
+import { useRef } from 'react';
 
 export const meta: MetaFunction = ({ data }: { data: Data | undefined }) => {
   if (!data) {
@@ -92,22 +94,26 @@ export default function Index() {
     setWithLocalStorage(document.documentElement.classList[0] ? 'dark' : 'light');
   };
 
+  const toastRef = useRef<ToastHandle>(null);
+
   const shareText = () => {
     const url = new URL(data.ENV.WEBSITE_URL);
     const shareText = `${goodMorningOfTheDay.flag} | ${goodMorningOfTheDay.phrase} 
     
 ${url}`;
 
-    if (navigator) {
-      navigator.clipboard.writeText(shareText);
+    if (navigator.share) {
       navigator.share({
         text: shareText,
       });
+    } else {
+      navigator.clipboard.writeText(shareText);
+      toastRef.current?.showToast();
     }
   };
 
   return (
-    <section className="flex flex-col items-center justify-center text-center h-screen px-5">
+    <section className="relative flex flex-col items-center justify-center text-center h-screen px-5">
       <div className="flex absolute left-3 top-3">
         <ToggleButton
           onChange={toggleDarkMode}
@@ -145,6 +151,7 @@ ${url}`;
           Share
         </button>
       </div>
+      <Toast ref={toastRef} message="Copied to clipboard!" />
     </section>
   );
 }
