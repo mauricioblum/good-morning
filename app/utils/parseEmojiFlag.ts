@@ -32,3 +32,9 @@ export function parseEmojiFlag(flag: string) {
 
   return country;
 }
+
+export function parseLetterFlag(value: string) {
+  const country = [...value].map((char) => regionalIndicatorSymbolsMap[char]).join('');
+
+  return country;
+}

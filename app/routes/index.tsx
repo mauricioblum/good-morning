@@ -51,6 +51,7 @@ import type { MetaFunction } from 'remix';
 import GithubIcon from '../components/GithubIcon';
 import { useLocalStorage } from '../utils/useLocalStorage';
 import { ToggleButton } from '../components/ToggleButton';
+import { parseEmojiFlag } from '../utils/parseEmojiFlag';
 
 export const meta: MetaFunction = ({ data }: { data: Data | undefined }) => {
   if (!data) {
@@ -74,9 +75,13 @@ export const meta: MetaFunction = ({ data }: { data: Data | undefined }) => {
     'og:type': 'website',
     'og:description': goodMorningOfTheDay.description,
     'og:url': data.ENV.WEBSITE_URL,
-    'og:image': `${data.ENV.WEBSITE_URL}/social/${goodMorningOfTheDay.phrase}.png`,
+    'og:image': `${data.ENV.WEBSITE_URL}/social/${parseEmojiFlag(goodMorningOfTheDay.flag)}-${
+      goodMorningOfTheDay.phrase
+    }.png`,
     'twitter:card': 'summary_large_image',
-    'twitter:image': `${data.ENV.WEBSITE_URL}/social/${goodMorningOfTheDay.phrase}.png`,
+    'twitter:image': `${data.ENV.WEBSITE_URL}/social/${parseEmojiFlag(goodMorningOfTheDay.flag)}-${
+      goodMorningOfTheDay.phrase
+    }.png`,
   };
 };
 
@@ -108,10 +113,13 @@ export default function Index() {
           <GithubIcon fill={themePreference === 'light' ? undefined : '#fff'} />
         </a>
       </div>
-      <p className="text-center text-gray-700 md:text-8xl text-6xl font-bold transition-all">
+      <p
+        translate="no"
+        className="text-center text-gray-700 md:text-8xl text-6xl font-bold transition-all"
+      >
         {goodMorningOfTheDay.flag}
       </p>
-      <h1 className="md:text-8xl text-6xl font-bold mb-8 transition-all max-w-full">
+      <h1 translate="no" className="md:text-8xl text-6xl font-bold mb-8 transition-all max-w-full">
         {goodMorningOfTheDay.phrase}
       </h1>
       <p className="md:text-xl text-lg px-4 transition-all">{goodMorningOfTheDay.description}</p>

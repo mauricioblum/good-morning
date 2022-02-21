@@ -1,6 +1,5 @@
 import { createCanvas, loadImage, registerFont } from 'canvas';
 import { getLines } from '../../utils/canvasUtils';
-import { parseEmojiFlag } from '../../utils/parseEmojiFlag';
 import path from 'path';
 import fs from 'fs';
 
@@ -42,6 +41,7 @@ type GenerateSocialImage = {
 interface Params {
   params: {
     phrase: string;
+    flag: string;
   };
 }
 
@@ -57,22 +57,8 @@ const generateImage = async ({
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext('2d');
 
-  fs.readdir(path.resolve(process.cwd(), '../../'), (err, files) => {
-    console.log('root folder');
-    files.forEach((file) => {
-      console.log(file);
-    });
-  });
-
-  fs.readdir(path.resolve(process.cwd(), '../'), (err, files) => {
-    console.log('root folder 1');
-    files.forEach((file) => {
-      console.log(file);
-    });
-  });
-
-  fs.readdir(path.resolve(process.cwd()), (err, files) => {
-    console.log('current folder');
+  fs.readdir(path.resolve(process.cwd(), '/usr/share/fonts/'), (err, files) => {
+    console.log('reading fonts...');
     files.forEach((file) => {
       console.log(file);
     });
@@ -115,7 +101,7 @@ const generateImage = async ({
   const phraseHeight = ctx.measureText(phrase).actualBoundingBoxAscent;
 
   if (flag) {
-    const country = parseEmojiFlag(flag);
+    const country = flag;
     const flagImage = await loadImage(`https://flagcdn.com/108x81/${country}.png`);
     const x = width / 2.18;
     const y = bottomOfTitleText + lineHeight / 2 - offset;
@@ -134,13 +120,14 @@ const generateImage = async ({
 
 export async function loader({ params }: Params) {
   const imageName = params.phrase.slice(0, params.phrase.indexOf('.'));
+  const flag = params.flag;
 
-  const canvasImage = await generateImage({ flag: '🇮🇹', phrase: imageName });
+  const canvasImage = await generateImage({ flag, phrase: imageName });
   return new Response(canvasImage, {
     status: 200,
     headers: {
       'Content-Type': 'image/png',
-      'Content-Disposition': `inline; filename="${imageName}.png"`,
+      'Content-Disposition': `inline; filename="${encodeURIComponent(imageName)}.png"`,
       'Cache-Control': 'public, max-age=2419200',
       'x-content-type-options': 'nosniff',
     },
