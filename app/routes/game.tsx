@@ -185,7 +185,7 @@ export default function Game() {
     const flagsText = `🚩🚩 ${
       Object.values(choices).filter((c) => c === true).length
     }/5 | Good Morning Flag Game 🚩🚩`;
-    const shareText = `${flagsText}\n\n${choicesText}\n\n${data.ENV.WEBSITE_URL}`;
+    const shareText = `${flagsText}\n\n${choicesText}\n\n${data.ENV.WEBSITE_URL}/game`;
     if (navigator.share) {
       navigator.share({
         text: shareText,
