@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from 'react';
 import Choice from '../components/Choice';
 import Toast, { ToastHandle } from '../components/Toast';
 import { parseFlag } from '../utils/parseEmojiFlag';
+import { useLocalStorage } from '../utils/useLocalStorage';
+import { CountDownTimer } from '../components/Countdown';
 
 type GameData = Data & {
   entries: ListItem[][];
@@ -84,7 +86,11 @@ function getRandomEntriesFromData(solution: ListItem, index: number): ListItem[]
   ];
 }
 
-function shuffleArray(array: ListItem[]): ListItem[] {
+function shuffleArray(array: ListItem[], isPlayed?: boolean): ListItem[] {
+  if (isPlayed) {
+    return array;
+  }
+
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
@@ -117,6 +123,7 @@ export default function Game() {
     3: false,
     4: false,
   });
+
   const [choices, setChoices] = useState<Guesses>({
     0: false,
     1: false,
@@ -133,11 +140,24 @@ export default function Game() {
     4: false,
   });
 
-  const [entryCount, setEntryCount] = useState(-1);
+  const { state: gameData, setWithLocalStorage } = useLocalStorage('@GMG:UserData');
+
+  const [timer, setTimer] = useState(() => {
+    const now = new Date();
+    const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+
+    return {
+      hours: endOfDay.getHours() - now.getHours(),
+      minutes: endOfDay.getMinutes() - now.getMinutes(),
+      seconds: endOfDay.getSeconds() - now.getSeconds(),
+    };
+  });
+
+  const [selectionArray, setSelectionArray] = useState<number[]>([]);
 
   const [viewTips, setViewTips] = useState(false);
 
-  const [allGuesses, setAllGuessed] = useState<boolean>(false);
+  const [allGuessed, setAllGuessed] = useState<boolean>(false);
 
   const toastRef = useRef<ToastHandle>(null);
 
@@ -149,9 +169,11 @@ export default function Game() {
 
   const data = useLoaderData<GameData>();
 
-  const entries = data.entries;
+  const entries: ListItem[][] = gameData ? JSON.parse(gameData).entries : data.entries;
 
   const handleGuess = (index: number, entry: ListItem[], alternative: ListItem) => {
+    setSelectionArray([...selectionArray, entry.indexOf(alternative)]);
+
     if (entryIndex[index]) {
       return;
     }
@@ -230,11 +252,74 @@ export default function Game() {
   useEffect(() => {
     if (Object.values(guesses).every((g) => g === true)) {
       setAllGuessed(true);
+      if (gameData) {
+        const newGameState = {
+          ...JSON.parse(gameData),
+          allGuessed: true,
+          entries,
+          choices,
+          selectionArray,
+          shareTexts,
+          dayPlayed: new Date().getDate(),
+        };
+        setWithLocalStorage(JSON.stringify(newGameState));
+      } else {
+        setWithLocalStorage(
+          JSON.stringify({
+            allGuessed: true,
+            entries,
+            choices,
+            selectionArray,
+            shareTexts,
+            dayPlayed: new Date().getDate(),
+          })
+        );
+      }
       setTimeout(() => {
         infoRef?.current?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
     }
   }, [guesses]);
+
+  useEffect(() => {
+    const currentDay = new Date().getDate();
+
+    if (gameData) {
+      const dayPlayed = JSON.parse(gameData).dayPlayed;
+
+      if (dayPlayed !== currentDay) {
+        localStorage.removeItem('@GMG:UserData');
+        setAllGuessed(false);
+      }
+    }
+  }, [gameData]);
+
+  useEffect(() => {
+    if (gameData) {
+      const allGuessed = JSON.parse(gameData).allGuessed;
+      const choices = JSON.parse(gameData).choices;
+      const shareTexts = JSON.parse(gameData).shareTexts;
+      setShareTexts(shareTexts);
+      setAllGuessed(allGuessed);
+      setChoices(choices);
+      setEntryIndex({
+        0: true,
+        1: true,
+        2: true,
+        3: true,
+        4: true,
+      });
+      setGuesses({
+        0: true,
+        1: true,
+        2: true,
+        3: true,
+        4: true,
+      });
+      const selection = JSON.parse(gameData).selectionArray ?? [];
+      setSelectionArray(selection);
+    }
+  }, [gameData]);
 
   return (
     <div className="relative h-full min-h-screen w-full pb-6 bg-gradient-to-b from-amber-200 to-cyan-500 dark:from-zinc-800 dark:to-slate-700">
@@ -246,31 +331,35 @@ export default function Game() {
         </p>
       </div>
       <section className="relative w-full flex flex-col pt-5 md:pt-10 text-center md:flex-row md:items-center md:justify-center md:text-center px-5">
-        {entries.map((entry, index) => (
-          <div key={index} className="guess md:w-1/5">
-            <h1 className="mb-1 md:mb-2 lg:mb-5 md:text-2xl lg:text-4xl text-base md:h-28">
-              {getSolutions()[index].phrase}
-            </h1>
-            <div className="options mr-2 flex flex-row md:flex-col">
-              {entry.map((alternative) => (
-                <Choice
-                  key={alternative.id}
-                  entry={alternative}
-                  isRightAnswer={alternative.id === getSolutions()[index].id}
-                  isGuessed={guesses[index]}
-                  isEntrySelected={entryIndex[index]}
-                  onClickEntry={() => handleGuess(index, entry, alternative)}
-                />
-              ))}
+        {entries.map((entry, index) => {
+          const defaultSelectedIndex = selectionArray[index];
+          return (
+            <div key={index} className="guess md:w-1/5">
+              <h1 className="mb-1 md:mb-2 lg:mb-5 md:text-2xl lg:text-4xl text-base md:h-28">
+                {getSolutions()[index].phrase}
+              </h1>
+              <div className="options mr-2 flex flex-row md:flex-col">
+                {entry.map((alternative, altIndex) => (
+                  <Choice
+                    key={alternative.id}
+                    entry={alternative}
+                    isRightAnswer={alternative.id === getSolutions()[index].id}
+                    isGuessed={guesses[index] || allGuessed}
+                    isEntrySelected={entryIndex[index]}
+                    defaultSelected={defaultSelectedIndex === altIndex}
+                    onClickEntry={() => handleGuess(index, entry, alternative)}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </section>
-      {allGuesses && (
-        <div ref={infoRef} className="mt-2 md:mt-5 flex items-center justify-center">
+      {allGuessed && (
+        <div ref={infoRef} className="mt-2 md:mt-5 flex flex-col items-center justify-center">
           <div className="flex items-center bg-black bg-opacity-20 p-2 rounded-lg">
             <button
-              className="bg-sky-300 hover:bg-sky-500 text-white font-bold py-2 px-4 rounded mr-2"
+              className="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded mr-2"
               onClick={() => {
                 setViewTips(true);
                 setTimeout(() => {
@@ -289,6 +378,15 @@ export default function Game() {
               <span className="pretty hidden md:block">Share results</span>
               <span className="pretty flex md:hidden">Share</span>
             </button>
+          </div>
+          <div className="flex flex-col mt-1">
+            <p className="pretty mr-2 text-center">
+              You got {`${Object.values(choices).filter((c) => c === true).length}/5`} !
+            </p>
+            <div className="flex items-center mt-1 text-center">
+              <p className="pretty mr-1">Next flags in</p>
+              <CountDownTimer hours={timer.hours} minutes={timer.minutes} seconds={timer.seconds} />
+            </div>
           </div>
         </div>
       )}

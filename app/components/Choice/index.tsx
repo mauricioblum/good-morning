@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ListItem } from '../../routes';
 import { parseFlag } from '../../utils/parseEmojiFlag';
 
@@ -8,6 +8,7 @@ interface ChoiceProps {
   isGuessed: boolean;
   isEntrySelected: boolean;
   isRightAnswer: boolean;
+  defaultSelected?: boolean;
 }
 
 const Choice: React.FC<ChoiceProps> = ({
@@ -16,8 +17,15 @@ const Choice: React.FC<ChoiceProps> = ({
   isGuessed,
   isEntrySelected,
   isRightAnswer,
+  defaultSelected = false,
 }) => {
   const [selected, setSelected] = useState(false);
+
+  useEffect(() => {
+    if (defaultSelected) {
+      setSelected(true);
+    }
+  }, [defaultSelected]);
 
   const getTailwindBgClass = () => {
     if (isGuessed) {
