@@ -4,7 +4,7 @@ import asturiasFlag from '../assets/flags/asturias.png';
 import bashkirFlag from '../assets/flags/bashkir.png';
 import basqueFlag from '../assets/flags/basque.png';
 import bavarianFlag from '../assets/flags/bavarian.png';
-import bretonFlag from '../assets/flags/breton.webp';
+import bretonFlag from '../assets/flags/breton.png';
 import catalanFlag from '../assets/flags/catalan.png';
 import galiciaFlag from '../assets/flags/galicia.png';
 

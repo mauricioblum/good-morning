@@ -1,4 +1,4 @@
-import { useLoaderData } from 'remix';
+import { useLoaderData, Link } from 'remix';
 import data from '../../data/data.json';
 
 export interface ListItem {
@@ -150,6 +150,13 @@ ${url}`;
         >
           Share
         </button>
+
+        <Link
+          className="mt-2 bg-purple-500 hover:bg-purple-400 text-white font-bold py-2 px-4 border-b-4 border-purple-700 hover:border-purple-500 rounded"
+          to="game"
+        >
+          Good Morning Game
+        </Link>
       </div>
       <Toast ref={toastRef} message="Copied to clipboard!" />
     </section>

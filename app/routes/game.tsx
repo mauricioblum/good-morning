@@ -125,11 +125,17 @@ export default function Game() {
     4: false,
   });
 
+  const [entryCount, setEntryCount] = useState(-1);
+
   const [viewTips, setViewTips] = useState(false);
 
   const [allGuesses, setAllGuessed] = useState<boolean>(false);
 
   const toastRef = useRef<ToastHandle>(null);
+
+  const infoRef = useRef<HTMLDivElement>(null);
+
+  const tipsRef = useRef<HTMLDivElement>(null);
 
   const [shareTexts, setShareTexts] = useState<string[]>([]);
 
@@ -138,6 +144,7 @@ export default function Game() {
   const entries = data.entries;
 
   const handleGuess = (index: number, entry: ListItem[], alternative: ListItem) => {
+    setEntryCount(index);
     let text = '';
     if (alternative.id === getSolutions()[index].id) {
       setChoices((choices) => ({
@@ -197,21 +204,23 @@ export default function Game() {
   useEffect(() => {
     if (Object.values(guesses).every((g) => g === true)) {
       setAllGuessed(true);
+      setTimeout(() => {
+        infoRef?.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     }
   }, [guesses]);
 
   return (
-    <div className="relative h-screen w-full">
-      <div className="pt-10 relative w-full flex flex-col text-center">
+    <div className="relative h-full min-h-screen w-full">
+      <div className="pt-2 px-2 md:pt-10 relative w-full flex flex-col text-center">
         <h1 className="text-4xl">GMG</h1>
         <h2 className="text-3xl">Good Morning Game</h2>
-        <p>
-          How to play: <br /> Select the flag corresponding to the Good Morning. <br />
-          If the same flag appears more than once per Good Morning, hover to see which language the
-          flag is referring to.
+        <p className="text-sm">
+          How to play: <br /> Select the flag corresponding to the Good Morning phrase above each
+          row.
         </p>
       </div>
-      <section className="relative w-full flex flex-col pt-10 md:pt-20 text-center md:flex-row md:items-center md:justify-center md:text-center px-5">
+      <section className="relative w-full flex flex-col pt-5 md:pt-20 text-center md:flex-row md:items-center md:justify-center md:text-center px-5">
         {entries.map((entry, index) => (
           <div key={index} className="guess md:w-1/5">
             <h1 className="mb-1 md:mb-5 md:text-4xl text-base md:h-28">
@@ -224,6 +233,7 @@ export default function Game() {
                   entry={alternative}
                   isRightAnswer={alternative.id === getSolutions()[index].id}
                   isGuessed={guesses[index]}
+                  isEntrySelected={entryCount >= index}
                   onClickEntry={() => handleGuess(index, entry, alternative)}
                 />
               ))}
@@ -232,29 +242,42 @@ export default function Game() {
         ))}
       </section>
       {allGuesses && (
-        <div className="absolute bottom-4 right-3">
-          <button
-            className="bg-neutral-300 hover:bg-neutral-500 text-white font-bold py-2 px-4 rounded mr-2"
-            onClick={() => {
-              setViewTips(true);
-            }}
-          >
-            <span className="mr-3">🌎</span>View descriptions
-          </button>
-          <button
-            className="bg-neutral-700 hover:bg-neutral-900 text-white font-bold py-2 px-4 rounded"
-            onClick={handleShare}
-          >
-            <span className="mr-3">🔁</span>Share results
-          </button>
+        <div ref={infoRef} className="mt-2 md:mt-5 flex items-center justify-center">
+          <div className="flex items-center bg-black bg-opacity-20 p-2 rounded-lg">
+            <button
+              className="bg-sky-300 hover:bg-sky-500 text-white font-bold py-2 px-4 rounded mr-2"
+              onClick={() => {
+                setViewTips(true);
+                setTimeout(() => {
+                  tipsRef.current?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+            >
+              <span className="mr-3">🌎</span>
+              <span>More info</span>
+            </button>
+            <button
+              className="bg-emerald-700 hover:bg-emerald-900 text-white font-bold py-2 px-4 rounded flex items-center"
+              onClick={handleShare}
+            >
+              <span className="mr-3">🔁</span>
+              <span className="hidden md:block">Share results</span>
+              <span className="flex md:hidden">Share</span>
+            </button>
+          </div>
         </div>
       )}
       {viewTips && (
-        <div className="w-full p-10 px-20 mt-10 flex flex-col justify-center align-center text-center">
+        <div
+          ref={tipsRef}
+          className="w-full p-5 md:p-20 mt-5 md:mt-10 mb-5 flex flex-col justify-center align-center md:text-center"
+        >
           {entries.map((entry, index) => (
-            <div className="flex align-center">
+            <div className="flex align-center mb-2">
               <div className="mr-5">
-                <p>{parseFlag(getSolutions()[index].flag)}</p>
+                <p className="flex flex-col w-5 h-6 items-center justify-center">
+                  {parseFlag(getSolutions()[index].flag, 128, 128)}
+                </p>
               </div>
               <div>
                 <p>{getSolutions()[index].description}</p>
@@ -265,6 +288,21 @@ export default function Game() {
       )}
       <div className="relative w-full flex align-center justify-center">
         <Toast ref={toastRef} message="Copied to clipboard!" />
+      </div>
+      <div className="absolute bottom-1 w-full flex flex-col items-center transition-all">
+        <p className="text-gray-300 text-sm">Made by @mauricioblum</p>
+        <p className="text-gray-300 text-sm">
+          Information taken from{' '}
+          <a
+            target="_blank"
+            rel="noopener noreferer"
+            className="underline text-gray-500"
+            href="https://www.araioflight.com/good-morning-different-languages-world/"
+          >
+            this
+          </a>{' '}
+          article.
+        </p>
       </div>
     </div>
   );

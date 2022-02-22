@@ -6,10 +6,17 @@ interface ChoiceProps {
   entry: ListItem;
   onClickEntry: () => void;
   isGuessed: boolean;
+  isEntrySelected: boolean;
   isRightAnswer: boolean;
 }
 
-const Choice: React.FC<ChoiceProps> = ({ entry, onClickEntry, isGuessed, isRightAnswer }) => {
+const Choice: React.FC<ChoiceProps> = ({
+  entry,
+  onClickEntry,
+  isGuessed,
+  isEntrySelected,
+  isRightAnswer,
+}) => {
   const [selected, setSelected] = useState(false);
 
   const getTailwindBgClass = () => {
@@ -20,14 +27,16 @@ const Choice: React.FC<ChoiceProps> = ({ entry, onClickEntry, isGuessed, isRight
   };
 
   const getTailwindBorderClass = () => {
-    if (selected) {
+    if (selected && isEntrySelected) {
       return 'border-black';
     }
     return '';
   };
 
   const handleOnClick = () => {
-    setSelected(true);
+    if (!isEntrySelected) {
+      setSelected(true);
+    }
     onClickEntry();
   };
 
