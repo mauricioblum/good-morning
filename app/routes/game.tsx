@@ -5,6 +5,7 @@ import { Data, ListItem, getGoodMorningOfTheDay } from '.';
 import { useEffect, useRef, useState } from 'react';
 import Choice from '../components/Choice';
 import Toast, { ToastHandle } from '../components/Toast';
+import { parseFlag } from '../utils/parseEmojiFlag';
 
 type GameData = Data & {
   entries: ListItem[][];
@@ -253,7 +254,7 @@ export default function Game() {
           {entries.map((entry, index) => (
             <div className="flex align-center">
               <div className="mr-5">
-                <p>{getSolutions()[index].flag}</p>
+                <p>{parseFlag(getSolutions()[index].flag)}</p>
               </div>
               <div>
                 <p>{getSolutions()[index].description}</p>

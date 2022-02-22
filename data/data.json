@@ -67,16 +67,16 @@
       "flag": "🇫🇷"
     },
     {
-      "id": "alt-1",
+      "id": "altai-1",
       "phrase": "Јакшылыкту таҥла (Ĵakšılıktu tañla)",
       "description": "Altai is a language belonging to the Turkic language family and is officially spoken in the Altai Republic of Russia.",
-      "flag": "🇷🇺"
+      "flag": "custom-altai"
     },
     {
-      "id": "arag-1",
+      "id": "aragonese-1",
       "phrase": "Buen diya",
       "description": "Aragonese is a language in the Romance language family that is native to Spain and spoken by just over 10, 000 people in the Pyrenees valley of Aragon.",
-      "flag": "🇪🇸"
+      "flag": "custom-aragon"
     },
     {
       "id": "aus-1",
@@ -100,7 +100,7 @@
       "id": "asturian-1",
       "phrase": "Bonos dies",
       "description": "Asturian is a West Iberian Romance language spoken by around 400,000 people in Asturias, Spain.",
-      "flag": "🇪🇸"
+      "flag": "custom-asturias"
     },
     {
       "id": "bali-1",
@@ -109,28 +109,28 @@
       "flag": "🇮🇩"
     },
     {
-      "id": "bas-1",
+      "id": "basque-1",
       "phrase": "Egun on",
       "description": "Basque (euskara) is a language spoken in the Basque Country (Gipuzkoa, Araba, Bizkaia) and Navarra (in Spain) as well as in the French Basque Country (Labourd, Soule and Basse-Navarre). Linguistically, Basque is a language isolate and is unrelated to the other languages of Europe.",
-      "flag": "🇪🇸"
+      "flag": "custom-basque"
     },
     {
       "id": "bashkir-1",
       "phrase": "хәйерле ирте (xäyyerlye irtye)",
       "description": "Bashkir is an endangered language belonging to the Kipchak branch of the Turkic languages. Closely related to the Tatar and Kazakh languages, it is spoken by around 1.4 million native speakers in Russia, as well as in Ukraine, Kazakhstan, Belarus, Uzbekistan, and other neighboring post-Soviet regions.",
-      "flag": "🇷🇺"
+      "flag": "custom-bashkir"
     },
     {
       "id": "bavar-1",
       "phrase": "Guadn moing",
       "description": "Bavarian is a regional dialect of German spoken in the German state of Bavaria, western Austria, and Northeastern Italy by over 14 million people. It uses German grammar, but takes several root words from Latin.",
-      "flag": "🇷🇺"
+      "flag": "custom-bavarian"
     },
     {
       "id": "belarusian-1",
       "phrase": "Добрай раніцы (Dobray ranici)",
       "description": "Belarusian is the official language of Belarus. This East Slavic language is also spoken in Russia, Ukraine and Poland.",
-      "flag": "🇷🇺"
+      "flag": "🇧🇾"
     },
     {
       "id": "bengali-1",
@@ -160,7 +160,7 @@
       "id": "breton-1",
       "phrase": "Demat",
       "description": "Breton is a Southwestern Brittonic language of the Celtic language spoken in Brittany in the northwest of France.",
-      "flag": "🏳"
+      "flag": "custom-breton"
     },
     {
       "id": "bulgarian-1",
@@ -184,7 +184,7 @@
       "id": "catalan-1",
       "phrase": "Bon dia",
       "description": "Catalan is a Western Romance language derived from Vulgar Latin and named after the medieval Principality of Catalonia, in northeastern of modern Spain. It is the only official language of Andorra, and a co-official language of the Spanish autonomous communities of Catalonia, the Balearic Islands and Valencia.",
-      "flag": "🇪🇸"
+      "flag": "custom-catalan"
     },
     {
       "id": "chinese-mandarin-1",
@@ -298,7 +298,7 @@
       "id": "galician-1",
       "phrase": "Bos días",
       "description": "Galician is a Romance language spoken by around 2.4 million people in Galicia, a region in northwestern Spain, where it is the official language.",
-      "flag": "🇪🇸"
+      "flag": "custom-galician"
     },
     {
       "id": "georgian-1",

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ListItem } from '../../routes';
+import { parseFlag } from '../../utils/parseEmojiFlag';
 
 interface ChoiceProps {
   entry: ListItem;
@@ -38,9 +39,11 @@ const Choice: React.FC<ChoiceProps> = ({ entry, onClickEntry, isGuessed, isRight
       key={entry.id}
       title={titleHover}
       onClick={handleOnClick}
-      className={`flex items-center border-2 px-2 md:py-2 md:px-5 ${getTailwindBgClass()} ${getTailwindBorderClass()} w-auto md:w-20 my-0 mx-auto mb-2 flex-wrap cursor-pointer transition-all`}
+      className={`flex items-center border-2 px-2 md:py-2 md:px-5 ${getTailwindBgClass()} ${getTailwindBorderClass()} w-14 md:w-20 my-0 mx-auto mb-2 flex-wrap cursor-pointer transition-all`}
     >
-      <p className="phrase text-4xl">{entry.flag}</p>
+      <p className="phrase text-4xl h-10 flex flex-col items-center justify-center">
+        {parseFlag(entry.flag)}
+      </p>
     </div>
   );
 };

@@ -48,7 +48,7 @@ import type { MetaFunction } from 'remix';
 import GithubIcon from '../components/GithubIcon';
 import { useLocalStorage } from '../utils/useLocalStorage';
 import { ToggleButton } from '../components/ToggleButton';
-import { parseEmojiFlag } from '../utils/parseEmojiFlag';
+import { parseEmojiFlag, parseFlag } from '../utils/parseEmojiFlag';
 import Toast, { ToastHandle } from '../components/Toast';
 import { useRef } from 'react';
 
@@ -132,9 +132,9 @@ ${url}`;
       </div>
       <p
         translate="no"
-        className="text-center text-gray-700 md:text-9xl text-8xl font-bold transition-all"
+        className="text-center text-gray-700 md:text-9xl text-8xl font-bold transition-all flex flex-col items-center justify-center"
       >
-        {goodMorningOfTheDay.flag}
+        {parseFlag(goodMorningOfTheDay.flag, 128, 128)}
       </p>
       <h1 translate="no" className="md:text-8xl text-6xl font-bold mb-8 transition-all max-w-full">
         {goodMorningOfTheDay.phrase}
