@@ -28,7 +28,7 @@ const Toast = React.forwardRef<ToastHandle, ToastProps>(({ message, timeout = 30
   });
 
   return (
-    <div className={`absolute bottom-6 inset-center transition-all ${isShowing}`}>
+    <div className={`absolute inset-center transition-all ${isShowing}`}>
       <div className="toast flex items-center justify-center w-full bg-neutral-700 px-4 py-2 rounded-full">
         <p className="text-white">{message}</p>
       </div>

@@ -125,6 +125,14 @@ export default function Game() {
     4: false,
   });
 
+  const [entryIndex, setEntryIndex] = useState<Guesses>({
+    0: false,
+    1: false,
+    2: false,
+    3: false,
+    4: false,
+  });
+
   const [entryCount, setEntryCount] = useState(-1);
 
   const [viewTips, setViewTips] = useState(false);
@@ -144,10 +152,15 @@ export default function Game() {
   const entries = data.entries;
 
   const handleGuess = (index: number, entry: ListItem[], alternative: ListItem) => {
-    if (entryCount >= index) {
+    if (entryIndex[index]) {
       return;
     }
-    setEntryCount(index);
+
+    setEntryIndex((prev) => ({
+      ...prev,
+      [index]: true,
+    }));
+
     let text = '';
     if (alternative.id === getSolutions()[index].id) {
       setChoices((choices) => ({
@@ -175,7 +188,8 @@ export default function Game() {
     }/5 | Good Morning Flag Game 🚩🚩`;
 
     if (isMobile) {
-      shareText = shareTexts.join('\n');
+      const linesText = shareTexts.join('\n');
+      shareText = `${flagsText}\n\n${linesText}\n\n${data.ENV.WEBSITE_URL}/game`;
     } else {
       let line1 = '';
       let line2 = '';
@@ -245,7 +259,7 @@ export default function Game() {
                   entry={alternative}
                   isRightAnswer={alternative.id === getSolutions()[index].id}
                   isGuessed={guesses[index]}
-                  isEntrySelected={entryCount >= index}
+                  isEntrySelected={entryIndex[index]}
                   onClickEntry={() => handleGuess(index, entry, alternative)}
                 />
               ))}
@@ -285,7 +299,7 @@ export default function Game() {
           className="w-full p-5 md:p-20 mt-5 md:mt-10 mb-5 flex flex-col justify-center align-center md:text-center"
         >
           {entries.map((entry, index) => (
-            <div className="flex align-center mb-2">
+            <div className="flex align-center mb-2" key={index}>
               <div className="mr-5">
                 <p className="flex flex-col w-5 h-6 items-center justify-center">
                   {parseFlag(getSolutions()[index].flag, 128, 128)}
@@ -298,7 +312,7 @@ export default function Game() {
           ))}
         </div>
       )}
-      <div className="relative w-full flex align-center justify-center">
+      <div className="absolute top-2/4 w-full flex align-center justify-center">
         <Toast ref={toastRef} message="Copied to clipboard!" />
       </div>
       <div className="absolute bottom-1 w-full flex flex-col items-center transition-all">
