@@ -50,6 +50,10 @@ export const customFlagsMap = {
 } as Record<string, string>;
 
 export function parseEmojiFlag(flag: string) {
+  if (flag.startsWith('custom')) {
+    return flag;
+  }
+
   const country = [...flag].map((char) => regionalIndicatorSymbolsMap[char]).join('');
 
   return country;
