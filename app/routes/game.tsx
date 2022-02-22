@@ -323,7 +323,7 @@ export default function Game() {
 
   return (
     <div className="relative h-full min-h-screen w-full pb-6 bg-gradient-to-b from-amber-200 to-cyan-500 dark:from-zinc-800 dark:to-slate-700">
-      <div className="pt-2 px-2 md:pt-10 relative w-full flex flex-col text-center">
+      <div className="pt-2 px-2 md:pt-5 relative w-full flex flex-col text-center">
         <h2 className="pretty text-3xl mb-2">Good Morning Game</h2>
         <p className="pretty text-lg">
           How to play: <br /> Select the flag corresponding to the Good Morning phrase above each
@@ -356,7 +356,7 @@ export default function Game() {
         })}
       </section>
       {allGuessed && (
-        <div ref={infoRef} className="mt-2 md:mt-5 flex flex-col items-center justify-center">
+        <div ref={infoRef} className="mt-2 flex flex-col items-center justify-center">
           <div className="flex items-center bg-black bg-opacity-20 p-2 rounded-lg">
             <button
               className="bg-sky-400 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded mr-2"
