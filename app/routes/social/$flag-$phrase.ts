@@ -1,5 +1,6 @@
-import { createCanvas, loadImage } from 'canvas';
+import { createCanvas, Image, loadImage } from 'canvas';
 import { getLines } from '../../utils/canvasUtils';
+import { parseFlag } from '../../utils/parseEmojiFlag';
 
 type GenerateSocialImage = {
   // Author name to display.
@@ -86,7 +87,12 @@ const generateImage = async ({
 
   if (flag) {
     const country = flag;
-    const flagImage = await loadImage(`https://flagcdn.com/192x144/${country}.png`);
+    let flagImage: Image;
+    if (country.startsWith('custom')) {
+      flagImage = await loadImage(parseFlag(country, 192, 144) as string);
+    } else {
+      flagImage = await loadImage(`https://flagcdn.com/192x144/${country}.png`);
+    }
     const x = width / 2.42;
     const y = bottomOfTitleText + lineHeight / 2 - offset - 50;
     ctx.drawImage(flagImage, x, y);
