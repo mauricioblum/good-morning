@@ -237,11 +237,10 @@ export default function Game() {
   }, [guesses]);
 
   return (
-    <div className="relative h-full min-h-screen w-full">
+    <div className="relative h-full min-h-screen w-full pb-6 bg-gradient-to-b from-amber-200 to-cyan-500 dark:from-zinc-800 dark:to-slate-700">
       <div className="pt-2 px-2 md:pt-10 relative w-full flex flex-col text-center">
-        <h1 className="text-4xl">GMG</h1>
-        <h2 className="text-3xl">Good Morning Game</h2>
-        <p className="text-sm">
+        <h2 className="pretty text-3xl mb-2">Good Morning Game</h2>
+        <p className="pretty text-lg">
           How to play: <br /> Select the flag corresponding to the Good Morning phrase above each
           row.
         </p>
@@ -280,15 +279,15 @@ export default function Game() {
               }}
             >
               <span className="mr-3">🌎</span>
-              <span>More info</span>
+              <span className="pretty">More info</span>
             </button>
             <button
               className="bg-emerald-700 hover:bg-emerald-900 text-white font-bold py-2 px-4 rounded flex items-center"
               onClick={handleShare}
             >
               <span className="mr-3">🔁</span>
-              <span className="hidden md:block">Share results</span>
-              <span className="flex md:hidden">Share</span>
+              <span className="pretty hidden md:block">Share results</span>
+              <span className="pretty flex md:hidden">Share</span>
             </button>
           </div>
         </div>
@@ -296,7 +295,7 @@ export default function Game() {
       {viewTips && (
         <div
           ref={tipsRef}
-          className="w-full p-5 md:p-20 mt-5 md:mt-10 mb-5 flex flex-col justify-center align-center md:text-center"
+          className="w-full p-5 md:p-20 mt-5 md:mt-10 flex flex-col justify-center align-center md:text-center"
         >
           {entries.map((entry, index) => (
             <div className="flex align-center mb-2" key={index}>
@@ -316,13 +315,23 @@ export default function Game() {
         <Toast ref={toastRef} message="Copied to clipboard!" />
       </div>
       <div className="absolute bottom-1 w-full flex flex-col items-center transition-all">
-        <p className="text-gray-300 text-sm">Made by @mauricioblum</p>
-        <p className="text-gray-300 text-sm">
+        <p className="pretty text-stone-300 text-sm">
+          Made by{' '}
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-stone-500"
+            href="https://twitter.com/maublum"
+          >
+            @maublum
+          </a>
+        </p>
+        <p className="pretty text-stone-300 text-sm">
           Information taken from{' '}
           <a
             target="_blank"
-            rel="noopener noreferer"
-            className="underline text-gray-500"
+            rel="noopener noreferrer"
+            className="underline text-stone-500"
             href="https://www.araioflight.com/good-morning-different-languages-world/"
           >
             this
