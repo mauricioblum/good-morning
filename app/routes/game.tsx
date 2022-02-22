@@ -144,6 +144,9 @@ export default function Game() {
   const entries = data.entries;
 
   const handleGuess = (index: number, entry: ListItem[], alternative: ListItem) => {
+    if (entryCount >= index) {
+      return;
+    }
     setEntryCount(index);
     let text = '';
     if (alternative.id === getSolutions()[index].id) {
@@ -164,32 +167,41 @@ export default function Game() {
   };
 
   const handleShare = () => {
-    let line1 = '';
-    let line2 = '';
-    let line3 = '';
-    let line4 = '';
-    let line5 = '';
-    for (let i = 0; i < shareTexts.length; i++) {
-      const choices = [...shareTexts[i]];
-      for (let j = 0; j < choices.length; j++) {
-        if (j === 0) {
-          line1 += choices[j];
-        } else if (j === 1) {
-          line2 += choices[j];
-        } else if (j === 2) {
-          line3 += choices[j];
-        } else if (j === 3) {
-          line4 += choices[j];
-        } else if (j === 4) {
-          line5 += choices[j];
-        }
-      }
-    }
-    const choicesText = `${line1}\n${line2}\n${line3}\n${line4}\n${line5}`;
+    let shareText = '';
+    const isMobile = document.documentElement.clientWidth < 768;
+
     const flagsText = `🚩🚩 ${
       Object.values(choices).filter((c) => c === true).length
     }/5 | Good Morning Flag Game 🚩🚩`;
-    const shareText = `${flagsText}\n\n${choicesText}\n\n${data.ENV.WEBSITE_URL}/game`;
+
+    if (isMobile) {
+      shareText = shareTexts.join('\n');
+    } else {
+      let line1 = '';
+      let line2 = '';
+      let line3 = '';
+      let line4 = '';
+      let line5 = '';
+      for (let i = 0; i < shareTexts.length; i++) {
+        const choices = [...shareTexts[i]];
+        for (let j = 0; j < choices.length; j++) {
+          if (j === 0) {
+            line1 += choices[j];
+          } else if (j === 1) {
+            line2 += choices[j];
+          } else if (j === 2) {
+            line3 += choices[j];
+          } else if (j === 3) {
+            line4 += choices[j];
+          } else if (j === 4) {
+            line5 += choices[j];
+          }
+        }
+      }
+      const choicesText = `${line1}\n${line2}\n${line3}\n${line4}\n${line5}`;
+      shareText = `${flagsText}\n\n${choicesText}\n\n${data.ENV.WEBSITE_URL}/game`;
+    }
+
     if (navigator.share) {
       navigator.share({
         text: shareText,
@@ -220,10 +232,10 @@ export default function Game() {
           row.
         </p>
       </div>
-      <section className="relative w-full flex flex-col pt-5 md:pt-20 text-center md:flex-row md:items-center md:justify-center md:text-center px-5">
+      <section className="relative w-full flex flex-col pt-5 md:pt-10 text-center md:flex-row md:items-center md:justify-center md:text-center px-5">
         {entries.map((entry, index) => (
           <div key={index} className="guess md:w-1/5">
-            <h1 className="mb-1 md:mb-5 md:text-4xl text-base md:h-28">
+            <h1 className="mb-1 md:mb-2 lg:mb-5 md:text-2xl lg:text-4xl text-base md:h-28">
               {getSolutions()[index].phrase}
             </h1>
             <div className="options mr-2 flex flex-row md:flex-col">
