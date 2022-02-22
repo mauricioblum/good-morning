@@ -83,22 +83,16 @@ function getRandomEntriesFromData(solution: ListItem, index: number): ListItem[]
   ];
 }
 
-function shuffleArray(array: ListItem[], solution: ListItem, index: number): ListItem[] {
-  const shuffleEpoch = new Date(`January 1, ${1989 + index} 00:00:00`).valueOf();
-  const randomIndex = Math.floor((Date.now() - shuffleEpoch) / msInDay) % array.length;
-
-  //insert solution in random index
-  const shuffledArray = [...array];
-  shuffledArray.splice(randomIndex, 0, solution);
-  return shuffledArray;
+function shuffleArray(array: ListItem[]): ListItem[] {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
 function getEntries(solution: ListItem, index: number): ListItem[] {
-  const alternatives = shuffleArray(
-    [...getRandomEntriesFromData(solution, index)],
-    solution,
-    index
-  );
+  const alternatives = shuffleArray([...getRandomEntriesFromData(solution, index), solution]);
   return alternatives;
 }
 
@@ -129,6 +123,8 @@ export default function Game() {
     3: false,
     4: false,
   });
+
+  const [viewTips, setViewTips] = useState(false);
 
   const [allGuesses, setAllGuessed] = useState<boolean>(false);
 
@@ -208,6 +204,11 @@ export default function Game() {
       <div className="pt-10 relative w-full flex flex-col text-center">
         <h1 className="text-4xl">GMG</h1>
         <h2 className="text-3xl">Good Morning Game</h2>
+        <p>
+          How to play: <br /> Select the flag corresponding to the Good Morning. <br />
+          If the same flag appears more than once per Good Morning, hover to see which language the
+          flag is referring to.
+        </p>
       </div>
       <section className="relative w-full flex flex-col pt-10 md:pt-20 text-center md:flex-row md:items-center md:justify-center md:text-center px-5">
         {entries.map((entry, index) => (
@@ -232,11 +233,33 @@ export default function Game() {
       {allGuesses && (
         <div className="absolute bottom-4 right-3">
           <button
-            className="bg-neutral-500 hover:bg-neutral-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-neutral-300 hover:bg-neutral-500 text-white font-bold py-2 px-4 rounded mr-2"
+            onClick={() => {
+              setViewTips(true);
+            }}
+          >
+            <span className="mr-3">🌎</span>View descriptions
+          </button>
+          <button
+            className="bg-neutral-700 hover:bg-neutral-900 text-white font-bold py-2 px-4 rounded"
             onClick={handleShare}
           >
-            Share results
+            <span className="mr-3">🔁</span>Share results
           </button>
+        </div>
+      )}
+      {viewTips && (
+        <div className="w-full p-10 px-20 mt-10 flex flex-col justify-center align-center text-center">
+          {entries.map((entry, index) => (
+            <div className="flex align-center">
+              <div className="mr-5">
+                <p>{getSolutions()[index].flag}</p>
+              </div>
+              <div>
+                <p>{getSolutions()[index].description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       )}
       <div className="relative w-full flex align-center justify-center">

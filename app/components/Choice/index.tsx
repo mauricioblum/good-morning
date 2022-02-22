@@ -30,9 +30,13 @@ const Choice: React.FC<ChoiceProps> = ({ entry, onClickEntry, isGuessed, isRight
     onClickEntry();
   };
 
+  const title = entry.id.toString();
+  const titleHover = title.substring(0, title.indexOf('-')).toUpperCase();
+
   return (
     <div
       key={entry.id}
+      title={titleHover}
       onClick={handleOnClick}
       className={`flex items-center border-2 px-2 md:py-2 md:px-5 ${getTailwindBgClass()} ${getTailwindBorderClass()} w-auto md:w-20 my-0 mx-auto mb-2 flex-wrap cursor-pointer transition-all`}
     >
