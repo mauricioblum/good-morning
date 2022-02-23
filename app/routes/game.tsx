@@ -109,6 +109,7 @@ export const loader = () => {
     entries: getSolutions().map((solution, index) => getEntries(solution, index)),
     ENV: {
       WEBSITE_URL: process.env.WEBSITE_URL,
+      STORAGE_VERSION: process.env.STORAGE_VERSION,
     },
   };
 };
@@ -250,6 +251,19 @@ export default function Game() {
   };
 
   useEffect(() => {
+    if (gameData) {
+      const version = JSON.parse(gameData).version;
+      const currentVersion = data.ENV.STORAGE_VERSION;
+
+      if (!version) {
+        localStorage.removeItem('@GMG:UserData');
+      } else if (version !== currentVersion) {
+        localStorage.removeItem('@GMG:UserData');
+      }
+    }
+  }, [gameData]);
+
+  useEffect(() => {
     if (Object.values(guesses).every((g) => g === true)) {
       setAllGuessed(true);
       if (gameData) {
@@ -272,6 +286,7 @@ export default function Game() {
             selectionArray,
             shareTexts,
             dayPlayed: new Date().getDate(),
+            version: data.ENV.STORAGE_VERSION,
           })
         );
       }
@@ -282,20 +297,17 @@ export default function Game() {
   }, [guesses]);
 
   useEffect(() => {
-    const currentDay = new Date().getDate();
-
     if (gameData) {
+      const currentDay = new Date().getDate();
+
       const dayPlayed = JSON.parse(gameData).dayPlayed;
 
       if (dayPlayed !== currentDay) {
         localStorage.removeItem('@GMG:UserData');
         setAllGuessed(false);
+        return;
       }
-    }
-  }, [gameData]);
 
-  useEffect(() => {
-    if (gameData) {
       const allGuessed = JSON.parse(gameData).allGuessed;
       const choices = JSON.parse(gameData).choices;
       const shareTexts = JSON.parse(gameData).shareTexts;
