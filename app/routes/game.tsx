@@ -170,7 +170,9 @@ export default function Game() {
 
   const data = useLoaderData<GameData>();
 
-  const entries: ListItem[][] = gameData ? JSON.parse(gameData).entries : data.entries;
+  const [entries, setEntries] = useState<ListItem[][]>(
+    gameData ? JSON.parse(gameData).entries : data.entries
+  );
 
   const handleGuess = (index: number, entry: ListItem[], alternative: ListItem) => {
     setSelectionArray([...selectionArray, entry.indexOf(alternative)]);
@@ -250,6 +252,34 @@ export default function Game() {
     console.log(shareText);
   };
 
+  function resetGameState() {
+    setAllGuessed(false);
+    setShareTexts([]);
+    setChoices({
+      0: false,
+      1: false,
+      2: false,
+      3: false,
+      4: false,
+    });
+    setEntryIndex({
+      0: false,
+      1: false,
+      2: false,
+      3: false,
+      4: false,
+    });
+    setGuesses({
+      0: false,
+      1: false,
+      2: false,
+      3: false,
+      4: false,
+    });
+    setSelectionArray([]);
+    setEntries(data.entries);
+  }
+
   useEffect(() => {
     if (gameData) {
       const version = JSON.parse(gameData).version;
@@ -257,8 +287,10 @@ export default function Game() {
 
       if (!version) {
         localStorage.removeItem('@GMG:UserData');
+        resetGameState();
       } else if (version !== currentVersion) {
         localStorage.removeItem('@GMG:UserData');
+        resetGameState();
       }
     }
   }, [gameData]);
@@ -275,20 +307,9 @@ export default function Game() {
           selectionArray,
           shareTexts,
           dayPlayed: new Date().getDate(),
+          version: data.ENV.STORAGE_VERSION,
         };
         setWithLocalStorage(JSON.stringify(newGameState));
-      } else {
-        setWithLocalStorage(
-          JSON.stringify({
-            allGuessed: true,
-            entries,
-            choices,
-            selectionArray,
-            shareTexts,
-            dayPlayed: new Date().getDate(),
-            version: data.ENV.STORAGE_VERSION,
-          })
-        );
       }
       setTimeout(() => {
         infoRef?.current?.scrollIntoView({ behavior: 'smooth' });
@@ -304,7 +325,7 @@ export default function Game() {
 
       if (dayPlayed !== currentDay) {
         localStorage.removeItem('@GMG:UserData');
-        setAllGuessed(false);
+        resetGameState();
         return;
       }
 
