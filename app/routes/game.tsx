@@ -1,4 +1,4 @@
-import { useLoaderData } from 'remix';
+import { MetaFunction, useLoaderData } from 'remix';
 import data from '../../data/data.json';
 
 import { Data, ListItem, getGoodMorningOfTheDay } from '.';
@@ -111,6 +111,21 @@ export const loader = () => {
       WEBSITE_URL: process.env.WEBSITE_URL,
       STORAGE_VERSION: process.env.STORAGE_VERSION,
     },
+  };
+};
+
+export const meta: MetaFunction = ({ data }: { data: Data | undefined }) => {
+  return {
+    title: 'Good Morning Flag Game',
+    description:
+      'Try to guess from which languague the good morning flag is. Learn new languages and country flags every day.',
+    'og:title': 'Good Morning Flag Game',
+    'og:type': 'website',
+    'og:description':
+      'Try to guess from which languague the good morning flag is. Learn new languages and country flags every day.',
+    'og:url': data?.ENV.WEBSITE_URL ?? '',
+    'og:image': '',
+    'twitter:image': '',
   };
 };
 
@@ -361,7 +376,7 @@ export default function Game() {
       <div className="pt-2 px-2 md:pt-5 relative w-full flex flex-col text-center">
         <h2 className="pretty text-3xl mb-2">Good Morning Game</h2>
         <p className="pretty text-lg">
-          How to play: <br /> Select the flag corresponding to the Good Morning phrase above each
+          How to play: <br /> Select the flag corresponding to the Good Morning sentence above each
           row.
         </p>
       </div>
