@@ -278,6 +278,7 @@ export default function Game() {
     });
     setSelectionArray([]);
     setEntries(data.entries);
+    window.location.reload();
   }
 
   useEffect(() => {
@@ -297,20 +298,19 @@ export default function Game() {
 
   useEffect(() => {
     if (Object.values(guesses).every((g) => g === true)) {
+      console.log('🚀 ~ useEffect ~ guesses', guesses);
       setAllGuessed(true);
-      if (gameData) {
-        const newGameState = {
-          ...JSON.parse(gameData),
-          allGuessed: true,
-          entries,
-          choices,
-          selectionArray,
-          shareTexts,
-          dayPlayed: new Date().getDate(),
-          version: data.ENV.STORAGE_VERSION,
-        };
-        setWithLocalStorage(JSON.stringify(newGameState));
-      }
+      const newGameState = {
+        allGuessed: true,
+        entries,
+        choices,
+        selectionArray,
+        shareTexts,
+        dayPlayed: new Date().getDate(),
+        version: data.ENV.STORAGE_VERSION,
+      };
+      setWithLocalStorage(JSON.stringify(newGameState));
+
       setTimeout(() => {
         infoRef?.current?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
@@ -332,6 +332,8 @@ export default function Game() {
       const allGuessed = JSON.parse(gameData).allGuessed;
       const choices = JSON.parse(gameData).choices;
       const shareTexts = JSON.parse(gameData).shareTexts;
+      const entries = JSON.parse(gameData).entries;
+      setEntries(entries);
       setShareTexts(shareTexts);
       setAllGuessed(allGuessed);
       setChoices(choices);
@@ -342,13 +344,13 @@ export default function Game() {
         3: true,
         4: true,
       });
-      setGuesses({
-        0: true,
-        1: true,
-        2: true,
-        3: true,
-        4: true,
-      });
+      // setGuesses({
+      //   0: true,
+      //   1: true,
+      //   2: true,
+      //   3: true,
+      //   4: true,
+      // });
       const selection = JSON.parse(gameData).selectionArray ?? [];
       setSelectionArray(selection);
     }
