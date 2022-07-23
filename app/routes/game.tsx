@@ -116,7 +116,7 @@ export const loader = () => {
 
 export const meta: MetaFunction = ({ data }: { data: Data | undefined }) => {
   return {
-    title: 'Good Morning Flag Game',
+    title: 'Good Morning Daily Game',
     description:
       'Try to guess from which languague the good morning flag is. Learn new languages and country flags every day.',
     'og:title': 'Good Morning Flag Game',
