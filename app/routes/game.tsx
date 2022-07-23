@@ -462,7 +462,7 @@ export default function Game() {
       <div className="absolute top-2/4 w-full flex align-center justify-center">
         <Toast ref={toastRef} message="Copied to clipboard!" />
       </div>
-      <div className="absolute bottom-1 w-full flex flex-col items-center transition-all">
+      <div className="relative bottom-0 w-full flex flex-col items-center transition-all">
         <p className="pretty text-stone-300 text-sm">
           Made by{' '}
           <a
