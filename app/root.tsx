@@ -1,4 +1,5 @@
 import { Links, LinksFunction, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from 'remix';
+import { Analytics } from '@vercel/analytics/react';
 import globalStylesUrl from './styles/global.css';
 import tailwindStyles from './styles/tailwind.css';
 
@@ -22,6 +23,7 @@ export default function App() {
         <Links />
       </head>
       <body className="bg-white dark:bg-zinc-800 text-neutral-800 dark:text-white">
+        <Analytics />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
